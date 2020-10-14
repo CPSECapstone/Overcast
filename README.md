@@ -11,3 +11,11 @@ CloudHaven will keep user data safe and secure by holding all personal informati
 This tool will also provide a messaging system that gives a platform for vendors to communicate effectively with their customers.
 
 The future goal of CloudHaven is to give users the ability to customize the interface for different applications.
+
+# Tech Stack
+Front-end: React.js
+Back-end: Node.js, Express.js
+State management: Redux, Context
+Database: DynamoDB
+
+
