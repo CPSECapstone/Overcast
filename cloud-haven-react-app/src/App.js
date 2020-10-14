@@ -1,4 +1,5 @@
 import React from 'react';
+import { Home } from './components/components'
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
       Insert Header Here
       <div id="page">
         Insert Page Switching Logic Here
+        <Home />
       </div>
     </div>
   );
