@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { Home } from './components/components'
 import './App.css';
 
@@ -7,8 +8,10 @@ function App() {
       <div id="app">
          Insert Header Here
          <div id="page">
-         Insert Page Switching Logic Here
-         <Home />
+            <Switch>
+               <Route exact path='/'
+                  component={() => <Home />} />
+            </Switch>
          </div>
       </div>
    );
