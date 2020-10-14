@@ -13,9 +13,10 @@ This tool will also provide a messaging system that gives a platform for vendors
 The future goal of CloudHaven is to give users the ability to customize the interface for different applications.
 
 # Tech Stack
-Front-end: React.js
-Back-end: Node.js, Express.js
-State management: Redux, Context
+Front-end: React.js 
+
+Back-end: Node.js, Express.js 
+
+State management: Redux, Context 
+
 Database: DynamoDB
-
-
