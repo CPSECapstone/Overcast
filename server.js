@@ -35,7 +35,6 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json()); 
 
 app.use("/", router);
-app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.listen(port, function () {
     console.log(`Server up and listening on ${port}!`);
@@ -43,11 +42,6 @@ app.listen(port, function () {
 
 
 /* HTTP request functions */
-router.get('/', (req, res) => {
-    // Serves web page index.html 
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
-
 router.get('/testConnection', (req, res) => {
     console.log("recieved test connection");
     res.json({message: "hello"});
