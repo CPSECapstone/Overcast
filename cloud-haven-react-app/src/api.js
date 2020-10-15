@@ -2,7 +2,7 @@
  * or otherwise hit the backend api for data, use or add a function in this file.
  */
 
-const baseURL = ""; // once we have a url for our backend, put it here
+const baseURL = "http://localhost:5000";
 const headers = new Headers();
 
 headers.set('Content-Type', 'application/JSON');
@@ -39,4 +39,8 @@ export function get(endpoint) {
 
 export function del(endpoint) {
    return makeHttpRequest(endpoint, "DELETE");
+}
+
+export function testBackendConnection() {
+   return makeHttpRequest('/testConnection', "GET");
 }

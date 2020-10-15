@@ -48,6 +48,11 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
+router.get('/testConnection', (req, res) => {
+    console.log("recieved test connection");
+    res.json({message: "hello"});
+});
+
 router.post('/', async function(req, res) {
     // Add backend POST function here to connect to frontend
 
