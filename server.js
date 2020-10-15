@@ -45,7 +45,7 @@ app.listen(port, function () {
 /* HTTP request functions */
 router.get('/', (req, res) => {
     // Serves web page index.html 
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+    res.sendFile(path.join(__dirname + '/cloud-haven-react-app/public/index.html'));
 });
 
 router.post('/', async function(req, res) {
