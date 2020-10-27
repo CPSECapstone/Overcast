@@ -2,8 +2,22 @@ import React from 'react';
 import * as api from '../api.js';
 
 var testConnection = () => {
-   const res = api.testBackendConnection();
-   console.log(res);
+   api.get('/testConnection')
+      .then( data => {
+         console.log(data.message);
+      });
+   api.put('/testConnection', {message: "put test"})
+      .then( data => {
+         console.log(data.message);
+      });
+   api.post('/testConnection', {message: "post test"})
+      .then( data => {
+         console.log(data.message);
+      });
+   api.del('/testConnection')
+      .then( data => {
+         console.log(data.message);
+      });
 }
 
 function Test() {

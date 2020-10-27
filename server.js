@@ -42,9 +42,27 @@ app.listen(port, function () {
 
 
 /* HTTP request functions */
+
 router.get('/testConnection', (req, res) => {
-    console.log("recieved test connection");
-    res.json({message: "hello"});
+    console.log("recieved test get request");
+    res.json({message: "get test"});
+});
+
+router.post('/testConnection', (req, res) => {
+    console.log("recieved test post request");
+    console.log(`message recieved: ${req.body.message}`);
+    res.json({message: "post test"});
+});
+
+router.put('/testConnection', (req, res) => {
+    console.log("recieved test put request");
+    console.log(`message recieved: ${req.body.message}`);
+    res.json({message: "put test"});
+});
+
+router.delete('/testConnection', (req, res) => {
+    console.log("recieved test delete request");
+    res.json({message: "del test"});
 });
 
 router.post('/', async function(req, res) {
