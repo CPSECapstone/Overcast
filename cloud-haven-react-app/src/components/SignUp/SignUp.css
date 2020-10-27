@@ -1,0 +1,37 @@
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.signupWrapper {
+    border-radius: 25px;
+    background: #45d0d4;
+    padding: 20px;
+    position: relative;
+    width: 550px;
+    height: 590px;
+}
+
+.inputBox {
+    padding: 20px;
+}
+
+.buttonSignUp {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+  
+.buttonSignUp:hover {
+    background-color: #45a049;
+}
