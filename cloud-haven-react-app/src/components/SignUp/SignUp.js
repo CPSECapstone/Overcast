@@ -7,8 +7,11 @@ const SignUp = () => {
     
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        alert(`Submitting email ${email}`);
-        alert(`Submitting password ${password}`)
+        var signUpData = {
+            "email": email,
+            "password": password
+        };
+        alert(JSON.stringify(signUpData))
     }
 
     return (
