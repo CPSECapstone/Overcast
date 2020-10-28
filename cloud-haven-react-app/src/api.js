@@ -41,3 +41,30 @@ export function del(endpoint) {
          console.log(err);
       });
 }
+
+export function getFormData(companyName, formName) {
+   //return get(`:${companyName}/:${formName}`);
+   /*return {
+      formDescription: "this was a description",
+      fields: [
+         {
+            type: textbox,
+            label: "First Name"
+         },
+         {
+            type: textbox,
+            label: "Last Name"
+         },
+         {
+            type: email,
+            label: "Email"
+         },
+         {
+            type: phoneNumber,
+            label: "Phone Number"
+         }
+      ]
+   }*/ 
+}
+
+// get('/:companyName/:formName')
