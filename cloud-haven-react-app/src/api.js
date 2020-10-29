@@ -41,3 +41,7 @@ export function del(endpoint) {
          console.log(err);
       });
 }
+
+export function getFormData(companyName, formName) {
+   return get(`/Forms/${companyName}/${formName}`);
+}

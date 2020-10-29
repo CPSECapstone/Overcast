@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Test } from './components/components'
+import { Home, Test, CustomForm } from './components/components'
 import './App.css';
 
 function App() {
@@ -11,6 +11,8 @@ function App() {
             <Switch>
                <Route exact path='/'
                   component={() => <Home />} />
+               <Route exact path='/customForm'
+                  component={() => <CustomForm />} />
                <Route exact path='/test'
                   component={() => <Test />} />
             </Switch>
