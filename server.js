@@ -40,6 +40,8 @@ app.listen(port, function () {
     console.log(`Server up and listening on ${port}!`);
 });
 
+app.use('/Forms', require('./Routes/CustomFormAPI.js'));
+
 
 /* HTTP request functions */
 

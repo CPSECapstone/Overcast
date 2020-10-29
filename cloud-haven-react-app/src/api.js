@@ -46,3 +46,6 @@ export function signup(signUpData) {
    console.log("reached signup")
    return post('/Users', signUpData);
 }
+export function getFormData(companyName, formName) {
+   return get(`/Forms/${companyName}/${formName}`);
+}
