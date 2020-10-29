@@ -42,6 +42,8 @@ app.listen(port, function () {
 
 app.use('/Forms', require('./Routes/CustomFormAPI.js'));
 
+app.use('/Users', require('./Routes/UserAPI.js'));
+
 
 /* HTTP request functions */
 
@@ -66,4 +68,3 @@ router.delete('/testConnection', (req, res) => {
     console.log("recieved test delete request");
     res.json({message: "del test"});
 });
-
