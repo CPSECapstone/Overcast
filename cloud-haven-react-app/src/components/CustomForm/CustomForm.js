@@ -8,9 +8,7 @@ const testFormName = "FormName";
 
 // Props would include company name and form name
 export default props => {
-
-    // bruh
-
+    
     useEffect(() => {
         getFormData()
     }, []);
@@ -21,35 +19,10 @@ export default props => {
     });
 
     const getFormData = () => {
-        /*api.getFormData(testCompanyName, testFormName)
-         .then(res => {
-            setFormData(res)
-        })*/
-        setFormData({
-            formDescription: "This is a description",
-            fields: [
-            {
-                type: "textbox",
-                label: "First Name"
-            },
-            {
-                type: "textbox",
-                label: "Last Name"
-            },
-            {
-                type: "email",
-                label: "Email",
-                placeholder: "type your email here please :) haha if u want"
-            },
-            {
-                type: "phoneNumber",
-                label: "Phone Number"
-            },
-            {
-                type: "textarea",
-                label: "Tell \"us\" about yourself"
-            }
-            ]});
+        api.getFormData(testCompanyName, testFormName)
+        .then(res => {
+            setFormData(res);
+        }) 
     };
 
     // TODO: add all columned fields

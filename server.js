@@ -40,6 +40,8 @@ app.listen(port, function () {
     console.log(`Server up and listening on ${port}!`);
 });
 
+app.use('/Forms', require('./Routes/CustomFormAPI.js'));
+
 
 /* HTTP request functions */
 
@@ -65,7 +67,3 @@ router.delete('/testConnection', (req, res) => {
     res.json({message: "del test"});
 });
 
-router.post('/', async function(req, res) {
-    // Add backend POST function here to connect to frontend
-
-});
