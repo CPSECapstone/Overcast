@@ -69,3 +69,6 @@ router.post('/', async function(req, res) {
     // Add backend POST function here to connect to frontend
 
 });
+
+// Create a new user using their provided email and password
+app.use('/Users', require('./Routes/UserAPI.js'));
