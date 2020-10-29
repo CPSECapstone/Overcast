@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './SignUp.css';
+import * as api from '../../api.js';
 
 const SignUp = () => {
     const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ const SignUp = () => {
             "email": email,
             "password": password
         };
+        api.signup(signUpData);
         alert(JSON.stringify(signUpData))
     }
 

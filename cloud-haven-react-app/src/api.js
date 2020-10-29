@@ -41,3 +41,8 @@ export function del(endpoint) {
          console.log(err);
       });
 }
+
+export function signup(signUpData) {
+   console.log("reached signup")
+   post('/Users', signUpData);
+}
