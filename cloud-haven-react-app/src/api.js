@@ -44,5 +44,5 @@ export function del(endpoint) {
 
 export function signup(signUpData) {
    console.log("reached signup")
-   post('/Users', signUpData);
+   return post('/Users', signUpData);
 }

@@ -12,8 +12,10 @@ const SignUp = () => {
             "email": email,
             "password": password
         };
-        api.signup(signUpData);
-        alert(JSON.stringify(signUpData))
+        api.signup(signUpData)
+         .then(res => {
+             alert(res.message);
+         });
     }
 
     return (
