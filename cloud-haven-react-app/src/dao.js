@@ -8,7 +8,7 @@ AWS.config.update({
 var tableName = "Accounts";
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-function putUser(username, password){
+export function putUser(username, password){
     var params = {
         TableName: tableName,
         Item : {
@@ -26,7 +26,7 @@ function putUser(username, password){
     });
 }
 
-function getUser(username){
+export function getUser(username){
     var params = {
         TableName: tableName,
         Key : {
