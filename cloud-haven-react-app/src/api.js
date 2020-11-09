@@ -41,3 +41,12 @@ export function del(endpoint) {
          console.log(err);
       });
 }
+
+export function getFormData(companyName, formName) {
+   return get(`/Forms/${companyName}/${formName}`);
+}
+
+export function signup(signUpData) {
+   console.log("reached signup")
+   return post('/Users', signUpData);
+}
