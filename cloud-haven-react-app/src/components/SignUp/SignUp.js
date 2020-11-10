@@ -32,7 +32,7 @@ const SignUp = () => {
                 <br></br>
                 <input 
                     type="password" 
-                    name="password1"
+                    name="password"
                     onChange={e => setPassword(e.target.value)}
                 />
             </div>
