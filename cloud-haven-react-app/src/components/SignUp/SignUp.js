@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as api from '../../api.js';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -11,7 +12,8 @@ const SignUp = () => {
             "email": email,
             "password": password
         };
-        alert(JSON.stringify(signUpData))
+        //alert(JSON.stringify(signUpData))
+        api.signup(signUpData);
     }
 
     return (

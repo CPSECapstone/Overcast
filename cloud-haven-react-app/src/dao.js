@@ -5,19 +5,24 @@ AWS.config.update({
   endpoint: "http://localhost:8000"
 });
 
-var tableName = "Accounts";
-var docClient = new AWS.DynamoDB.DocumentClient();
+var dynamo = function(req, res) {
+    this.tableName = "Accounts";
+    this.docClient = new AWS.DynamoDB.DocumentClient();
+}
 
-export function putUser(username, password){
+//var tableName = "Accounts";
+//var docClient = new AWS.DynamoDB.DocumentClient();
+
+dynamo.prototype.putUser = function(username, password) {
     var params = {
-        TableName: tableName,
+        TableName: this.tableName,
         Item : {
             "Username" : username,
             "Password" : password
         }
     };
 
-    docClient.put(params, function(err, data) {
+    this.docClient.put(params, function(err, data) {
         if (err) {
             console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
@@ -26,15 +31,15 @@ export function putUser(username, password){
     });
 }
 
-export function getUser(username){
+dynamo.prototype.getUser = function(username) {
     var params = {
-        TableName: tableName,
+        TableName: this.tableName,
         Key : {
             "Username" : username
         }
     };
 
-    docClient.get(params, function(err, data) {
+    this.docClient.get(params, function(err, data) {
         if (err) {
             console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
@@ -42,3 +47,5 @@ export function getUser(username){
         }
     });
 }
+
+module.exports = dynamo;
