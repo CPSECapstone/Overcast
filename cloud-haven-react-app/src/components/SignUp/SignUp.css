@@ -1,0 +1,63 @@
+
+.signupWrapper {
+    border-radius: 20px;
+    background: #C4C4C4;
+    padding: 20px;
+    
+}
+
+.SignUpForm {
+    margin-top: 2em;
+}
+
+.header {
+    width: 70%;
+    font-size: 40px;
+    margin: auto;
+    text-align: center;
+}
+
+.closeButton {
+    background-color: transparent;
+    border: none;
+    float: right;
+    font-size: 1.5em;
+    position: relative;
+    bottom: .75em;
+    left: .5em
+}
+
+.closeButton:hover {
+    background-color: transparent;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.inputBox {
+    padding: 20px;
+}
+
+.eyeIcon {
+    float: right;
+    position: relative;
+    bottom: 2em;
+    right: .5em;
+}
+
+.buttonSignUp {
+    background-color: white;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
