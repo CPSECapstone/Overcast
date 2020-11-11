@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as api from '../../api.js';
 import { Container, Form, Button } from "react-bootstrap";
-import close from './closeButton.png';
+import close from '../../images/closeButton.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash} from "@fortawesome/free-solid-svg-icons";
 import './SignUp.css';
