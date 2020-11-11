@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../cloud-haven-react-app/src/dao.js');
+const db = require('../dao.js');
 
 // eventually, we will actually create a user account
 router.post('/', (req, res) => {
