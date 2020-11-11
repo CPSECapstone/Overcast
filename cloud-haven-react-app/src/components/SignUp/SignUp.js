@@ -20,7 +20,6 @@ const SignUp = () => {
             "email": email,
             "password": password
         };
-        //alert(JSON.stringify(signUpData))
         api.signup(signUpData);
     }
 
