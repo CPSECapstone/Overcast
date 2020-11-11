@@ -1,9 +1,17 @@
 import React, { useState } from "react";
+import { Container, Form, Button } from "react-bootstrap";
+import close from './closeButton.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash} from "@fortawesome/free-solid-svg-icons";
 import './SignUp.css';
+
+const eye = <FontAwesomeIcon icon={faEye} />
+const eyeClosed = <FontAwesomeIcon icon={faEyeSlash} />
 
 const SignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordShown, setPasswordShown] = useState(false);
     
     const handleSubmit = (evt) => {
         evt.preventDefault();
@@ -14,39 +22,51 @@ const SignUp = () => {
         alert(JSON.stringify(signUpData))
     }
 
+    const togglePassword = () => {
+        setPasswordShown(passwordShown ? false : true);
+    };
+
     return (
-        <div className="signupWrapper center" >
-        <h1 className="center">Create an account</h1>
-        <form>
-            <div className="inputBox center centerText">
-                <label>Email Address</label>
-                <br></br>
-                <input 
-                    type="email" 
-                    name="email" required
-                    onChange={e => setEmail(e.target.value)}
-                />
-            </div>
-            <div className="inputBox center centerText">
-                <label>Password</label>
-                <br></br>
-                <input 
-                    type="password" 
-                    name="password"
-                    onChange={e => setPassword(e.target.value)}
-                />
-            </div>
-            <div className="center  centerText">
-                <button 
-                    className="buttonSignUp" 
-                    type="submit" 
-                    onClick={handleSubmit}
-                >
-                    Sign Up
-                </button>
-            </div>
-        </form>
-        </div>
+        <Container className="signupWrapper center">
+            <Button className="closeButton">
+                <img src={close} />
+            </Button>
+            <Container className="SignUpForm">
+                <h1 className="header">Create an account</h1>
+                <Form>
+                    <Form.Group className="inputBox">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control 
+                            type="email" 
+                            name="email" required
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                    </Form.Group>
+                    <Form.Group className="inputBox">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control 
+                            type={passwordShown ? "text" : "password"} 
+                            name="password"
+                            onChange={e => setPassword(e.target.value)}
+                        />
+                        {passwordShown ?
+                            <i onClick={togglePassword} className="eyeIcon">{eye}</i>
+                            :
+                            <i onClick={togglePassword} className="eyeIcon">{eyeClosed}</i>
+                        }
+                    </Form.Group>
+                    <Form.Group className="centerText">
+                        <Button 
+                            className="buttonSignUp" 
+                            type="submit" 
+                            onClick={handleSubmit}
+                        >
+                            <b>Sign Up</b>
+                        </Button>
+                    </Form.Group>
+                </Form>
+            </Container>
+        </Container>
     )
 }
 
