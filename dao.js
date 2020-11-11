@@ -10,8 +10,6 @@ var dynamo = function(req, res) {
     this.docClient = new AWS.DynamoDB.DocumentClient();
 }
 
-//var tableName = "Accounts";
-//var docClient = new AWS.DynamoDB.DocumentClient();
 
 dynamo.prototype.putUser = function(username, password) {
     var params = {
