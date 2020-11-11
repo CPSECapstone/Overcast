@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as api from '../../api.js';
 import { Container, Form, Button } from "react-bootstrap";
 import close from './closeButton.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +20,7 @@ const SignUp = () => {
             "email": email,
             "password": password
         };
-        alert(JSON.stringify(signUpData))
+        api.signup(signUpData);
     }
 
     const togglePassword = () => {
