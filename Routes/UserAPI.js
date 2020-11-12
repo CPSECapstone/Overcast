@@ -1,15 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../dao.js');
+const bcrypt = require('bcrypt');
 
-// eventually, we will actually create a user account
 router.post('/', (req, res) => {
     const dynamo = new db(req, res);
     var body = req.body;
 
-    dynamo.putUser(body.email, body.password);
-    res.json({
-        message: "You've successfully created an account"
+    // TODO: potentially sanitize data --> need to research
+    bcrypt.hash(body.password, 10, function(err, hashedPassword) {
+        if (!err) {
+            console.log("password hashed!");
+            dynamo.putUser(body.email, hashedPassword);
+            res.status(200).json({message: "You've successfully created an account!"});
+        }
+        else {
+            console.log("Could not hash password");
+            res.status(400).json({error: "Could not create account"});
+        }
     });
 });
 

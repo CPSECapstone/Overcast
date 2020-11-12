@@ -1,8 +1,8 @@
 var AWS = require("aws-sdk");
 
 AWS.config.update({
-  region: "us-west-1",
-  endpoint: "http://localhost:8000"
+    region: "us-west-1",
+    endpoint: "http://localhost:8000"
 });
 
 var dynamo = function(req, res) {
@@ -10,8 +10,8 @@ var dynamo = function(req, res) {
     this.docClient = new AWS.DynamoDB.DocumentClient();
 }
 
-
 dynamo.prototype.putUser = function(username, password) {
+
     var params = {
         TableName: this.tableName,
         Item : {
@@ -42,6 +42,7 @@ dynamo.prototype.getUser = function(username) {
             console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
             console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+            return data;
         }
     });
 }
