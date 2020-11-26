@@ -62,3 +62,29 @@ Going through the above links should tell you how to set the database up locally
 4. run the file called `dynamoDb.sh` by using `source dynamoDb.sh` or `./dynamoDb.sh`
 5. to test if the tables were created run `aws dynamodb list-tables --endpoint-url http://localhost:8000`
     - you should see a table called `Accounts` 
+    
+# Contributor Guide
+You're all set up to start contributing to CloudHaven! Make sure to follow the code standard that is listed below. Happy coding :)
+
+## Folder Naming
+- lower-case
+## File Naming
+### React
+- UpperCamelCase
+### Node
+- camelCase
+
+## Naming
+- be descriptive
+- no unambiguous abbreviations
+- parameters and local variables are all lowerCamelCase
+- package names are all lowerCamelCase
+- class names are all UpperCamelCase
+- method names are all lowerCamelCase
+- @private methods must have trailing underscore (_), lowerCamelCase_
+
+## Formatting
+- required for all loops/conditionals
+- empty blocks should be on same line, function doNothing() {}
+- 4 space indentation
+
