@@ -21,14 +21,34 @@ State management: Redux, Context
 
 Database: DynamoDB
 
-# Setting Up The Local Database
+# Developer Onboarding
+1. Install Node.js 
+https://nodejs.org/en/
+
+2. Install Express
+https://expressjs.com/en/starter/installing.html
+
+3. Clone this repo onto your local machine.
+
+4. Run 'npm install' in 'Overcast/' to update the packages and dependencies.
+
+5. Run 'node server.js' in 'Overcast/backend/' to run the backend server.
+If the server is running, you will see this message in terminal:
+'Server up and listening on 5000!'
+
+6. Open another terminal and go to 'Overcast/cloud-haven-react-app/'.
+
+6. Run 'npm install' in 'Overcast/cloud-haven-react-app/' to update the packages and dependencies.
+
+7. Run 'npm start' in 'Overcast/cloud-haven-react-app/'.
+
+## Setting Up The Local Database
 1. Install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd)
 
 2. Setup the [local database](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
 
 ## Setting up the tables in the database
 Going through the above links should tell you how to set the database up locally. To test these changes you have to setup the table as well. I will explain how to do so below.
-
 
 3. Make sure the database is running
     - navigate to the directory where `DynamoDBLocal_lib` exists
