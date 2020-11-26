@@ -40,7 +40,13 @@ If the server is running, you will see this message in terminal:
 
 6. Run 'npm install' in 'Overcast/cloud-haven-react-app/' to update the packages and dependencies.
 
-7. Run 'npm start' in 'Overcast/cloud-haven-react-app/'.
+7. Run 'npm i --save @fortawesome/fontawesome-svg-core' in 'Overcast/cloud-haven-react-app/'.
+
+8. Run 'npm i --save @fortawesome/free-solid-svg-icons' in 'Overcast/cloud-haven-react-app/'.
+
+9. Run 'npm i --save @fortawesome/react-fontawesome' in 'Overcast/cloud-haven-react-app/'.
+    
+10. Run 'npm start' in 'Overcast/cloud-haven-react-app/'.
 
 ## Setting Up The Local Database
 1. Install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd)
