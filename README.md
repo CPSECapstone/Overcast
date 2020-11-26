@@ -23,18 +23,18 @@ Database: DynamoDB
 
 # Developer Onboarding
 1. Install Node.js 
-- https://nodejs.org/en/
+    - https://nodejs.org/en/
 
 2. Install Express
-- https://expressjs.com/en/starter/installing.html
+    - https://expressjs.com/en/starter/installing.html
 
 3. Clone this repo onto your local machine.
 
 4. Run 'npm install' in 'Overcast/' to update the packages and dependencies.
 
 5. Run 'node server.js' in 'Overcast/backend/' to run the backend server.
-- If the server is running, you will see this message in terminal:
-'Server up and listening on 5000!'
+    - If the server is running, you will see this message in terminal:
+    'Server up and listening on 5000!'
 
 6. Open another terminal and go to 'Overcast/cloud-haven-react-app/'.
 
