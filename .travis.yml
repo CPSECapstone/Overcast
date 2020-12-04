@@ -1,4 +1,5 @@
 language: node_js
 node_js:
   - 12
-sudo: required
+before_install:
+  - cd cloud-haven-react-app
