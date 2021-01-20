@@ -1,7 +1,26 @@
-#app {
+#App {
 
 }
 
-#page {
+#PageFrame {
+   height: 100%;
+   width: 85%;
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   border: 40px #37718E;
+   border-left-style: solid;
+   background-color: #37718E;
+   border-top-left-radius: 30px;
+}
 
+#MainContent {
+   width: 100%;
+   height: fit-content;
+   min-height: calc(100% - 104px);
+   background-color: white;
+   border: 10px white;
+   border-style: solid none none solid;
+   border-top-left-radius: 20px;
+   display: block;
 }
