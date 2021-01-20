@@ -1,0 +1,21 @@
+#TopBar {
+   background-color: #37718E;
+   color: white;
+   font-size: 58px;
+   height: fit-content;
+   width: calc(100% - 400px);
+   border-radius: 0 0 0 20%;
+   float: right;
+}
+
+#CloudHavenLogo {
+   height: 71px;
+   width: 420px;
+   color: white;
+   vertical-align: auto;
+
+}
+
+a:hover {
+   text-decoration: none;
+}

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Test, CustomForm } from './components/components'
+import { TopBar, Home, Test, CustomForm } from './components/components'
 import './App.css';
 
 function App() {
    return (
       <div id="app">
-         Insert Header Here
+         <TopBar />
          <div id="page">
             <Switch>
                <Route exact path='/'
