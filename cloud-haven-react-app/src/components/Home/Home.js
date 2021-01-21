@@ -1,12 +1,11 @@
 import React from 'react';
 import './Home.css';
+import ProfileDropdown from '../ProfileDropdown/ProfileDropdown.js'
 
 function Home() {
 
    return (
-      <div>
-         This will be the home page component.
-      </div>
+      ProfileDropdown()
    );
 }
 
