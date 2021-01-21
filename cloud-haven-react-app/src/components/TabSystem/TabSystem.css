@@ -22,7 +22,11 @@
 
 .Tabs > .nav-link:hover {
     color: black;
-    background-color: #abe3fd;
     border-radius: 20px;
     border: none;
+}
+
+.TabIcon {
+    position: relative;
+    bottom: .1em;
 }
