@@ -8,7 +8,7 @@ function TopBar() {
          <a href="/">
             <img id="CloudHavenLogo" alt="Cloud Haven" src={require("../../images/CloudHavenLogo.png")}/>
          </a>
-         <div id="ProfileDropdown" class="float-right">
+         <div id="ProfileDropdown" className="pull-right">
             <ProfileDropdown />
          </div>
       </div>
