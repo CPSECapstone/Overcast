@@ -18,9 +18,8 @@
    width: 100%;
    height: calc(100% - 104px);
    background-color: white;
-   border: 10px white;
-   border-style: solid none none solid;
    border-top-left-radius: 20px;
    display: block;
    overflow: auto;
+   padding: 16px;
 }
