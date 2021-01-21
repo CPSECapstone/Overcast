@@ -5,7 +5,8 @@ import './App.css';
 
 function App() {
    return (
-      <div id="app">
+      <div id="App">
+         {/* ---- insert side bar here ---- */}
          <div id="PageFrame">
             <TopBar />
             <div id="MainContent">
