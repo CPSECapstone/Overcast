@@ -10,8 +10,8 @@ var docClient = new AWS.DynamoDB.DocumentClient();
 
 export function putUser(username, password){
     var params = {
-        TableName: tableName,
-        Item : {
+        "TableName": tableName,
+        "Item" : {
             "Username" : username,
             "Password" : password
         }
@@ -28,8 +28,8 @@ export function putUser(username, password){
 
 export function getUser(username){
     var params = {
-        TableName: tableName,
-        Key : {
+        "TableName": tableName,
+        "Key" : {
             "Username" : username
         }
     };
