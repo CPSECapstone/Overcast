@@ -1,7 +1,24 @@
-#app {
-
+#App {
+   display: flex;
+   flex-direction: row;
+   background-color: #C4C4C4;
 }
 
-#page {
+#PageFrame {
+   height: 100%;
+   width: 100%;
+   border: 40px #37718E;
+   border-left-style: solid;
+   background-color: #37718E;
+   border-top-left-radius: 30px;
+}
 
+#MainContent {
+   width: 100%;
+   height: calc(100vh - 104px);
+   background-color: white;
+   border-top-left-radius: 20px;
+   display: block;
+   overflow: auto;
+   padding: 16px;
 }
