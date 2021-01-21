@@ -1,5 +1,6 @@
 import React from 'react';
 import './TopBar.css';
+import ProfileDropdown from '../ProfileDropdown/ProfileDropdown.js'
 
 function TopBar() {
    return (
@@ -7,7 +8,10 @@ function TopBar() {
          <a href="/">
             <img id="CloudHavenLogo" alt="Cloud Haven" src={require("../../images/CloudHavenLogo.png")}/>
          </a>
-   </div>
+         <div id="ProfileDropdown" class="float-right">
+            <ProfileDropdown />
+         </div>
+      </div>
    );
 }
 

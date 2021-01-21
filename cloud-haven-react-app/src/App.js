@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { TopBar, Home, Test, CustomForm } from './components/components'
+import { ProfileDropdown, TopBar, Home, Test, CustomForm } from './components/components'
 import './App.css';
 
 function App() {
