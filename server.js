@@ -15,7 +15,7 @@ const bodyParser = require('body-parser');
 var AWS = require("aws-sdk");
 
 AWS.config.update({
-    region: "eu-west-1",
+    region: "us-west-1",
     endpoint: "http://localhost:3000"
 });
 
