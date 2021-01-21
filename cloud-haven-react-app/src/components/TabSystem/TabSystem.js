@@ -6,7 +6,7 @@ const TabSystem = () => {
 
 
     return (
-        <Tabs defaultActiveKey="" id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey="UserProfile" id="uncontrolled-tab-example" className="Tabs">
             <Tab eventKey="UserProfile" title="User Profile">
             </Tab>
             <Tab eventKey="Messages" title="Messages">
