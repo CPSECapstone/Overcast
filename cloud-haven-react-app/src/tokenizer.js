@@ -59,6 +59,3 @@ function retrieveData(token){
     // console.log(ret_val);
     // return ret_val;
 }
-
-// tokenize("hello", "test");
-console.log(retrieveData("v8YjNSlCqSjY5UJYShPK20hYvAlQGo1c"));

@@ -22,6 +22,7 @@ aws dynamodb create-table \
     --provisioned-throughput \
         ReadCapacityUnits=10,WriteCapacityUnits=5 \
     --endpoint-url http://localhost:8000
+<<<<<<< HEAD
 
 # aws dynamodb create-table \
 #     --table-name TokenVault \
@@ -34,3 +35,5 @@ aws dynamodb create-table \
 #     --provisioned-throughput \
 #         ReadCapacityUnits=10,WriteCapacityUnits=5 \
 #     --endpoint-url http://localhost:8000
+=======
+>>>>>>> main
