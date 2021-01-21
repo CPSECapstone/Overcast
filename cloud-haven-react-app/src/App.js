@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Test, SignUp, CustomForm } from './components/components'
+import { Home, Test, SignUp, CustomForm, SidebarMenu} from './components/components'
+
 import './App.css';
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
                   component={() => <Test />} />
                <Route exact path='/signup'
                   component={() => <SignUp />} />
+               <Route exact path='/sidebar'
+                  component={() => <SidebarMenu />} />
+               
             </Switch>
          </div>
       </div>
