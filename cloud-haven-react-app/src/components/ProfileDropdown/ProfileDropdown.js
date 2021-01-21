@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
+import Dropdown from 'react-bootstrap/Dropdown'
 import './ProfileDropdown.css';
 
 const ProfileDropdown = () => {
 
     return (
-        <div class="dropdown">
-         <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">
-            Username
-         <span class="caret"></span></button>
-         <ul class="dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
-            <div class="dropdown-divider"></div>
-            <li><a href="#">Sign Out</a></li>
-         </ul>
-      </div>
+        <Dropdown>
+            <Dropdown.Toggle variant="light" id="dropdown-basic">
+                Username
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Settings</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item href="#/action-3">Sign Out</Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
     )
 }
 
