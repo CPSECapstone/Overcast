@@ -21,14 +21,14 @@ const ProfileDropdown = () => {
                     </span>
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item href="#/settings">
+                <Dropdown.Item href="/settings">
                     <span className="DropdownItem">
                         Settings
                         <img className="Icon" src={settings} />
                     </span>
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item href="#/signOut">
+                <Dropdown.Item href="/signOut">
                     <span className="DropdownItem">
                         Sign Out
                         <img className="Icon" src={logout} />
