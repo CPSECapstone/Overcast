@@ -14,7 +14,7 @@ var docClient = new AWS.DynamoDB.DocumentClient();
 
 // given a string and some data, return a tokenized value of the Data
 // for e.g. tokenize("1 Grand Ave.", "Address");
-function tokenize(astring, typeofdata){
+async function tokenize(astring, typeofdata){
     var token = randomizer.generate(32);
     var params = {
         "TableName" : tableName,
@@ -25,20 +25,19 @@ function tokenize(astring, typeofdata){
         }
     };
 
-    docClient.put(params, function(err, data) {
+    await docClient.put(params, function(err, data) {
         if (err) {
             console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
-            return null;
         } else {
             console.log("Added item:", JSON.stringify(data, null, 2));
-            return token;
         }
     });
 
+    return token;
 }
 
-// given a token, return the true data mapped to the token
-function retrieveData(token){
+// given a token, return the json data mapped to the token
+async function retrieveData(token){
     var params = {
         "TableName": tableName,
         "Key" : {
@@ -46,16 +45,27 @@ function retrieveData(token){
         }
     };
 
-    var ret_val = null;
 
-    return docClient.get(params, function(err, data) {
+    await docClient.get(params, function(err, data) {
         if (err) {
             console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
-            ret_val = JSON.stringify(data, null, 2);
-            return ret_val;
+            return JSON.stringify(data, null, 2);
         }
     });
-    // console.log(ret_val);
-    // return ret_val;
 }
+
+
+let token = "1grbi4AU1WCkISBPQoB3xW58aTtErNld";
+// tokenize("randomstring", "data")
+//     .then(function(res){
+//         token = res;
+//         console.log(token);
+//     })
+//     .catch((err) => console.log(err));
+
+retrieveData(token)
+    .then(function(res){
+        console.log(res);
+    })
+    .catch((err) => console.error(err));
