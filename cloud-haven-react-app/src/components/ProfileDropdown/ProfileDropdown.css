@@ -13,13 +13,16 @@
    opacity: 0.55;
    float: right;
    height: 30px;
+   width: 30px;
+   object-fit: cover;
    margin: 6px;
 }
 
 .dropdown-menu {
    width: 100%;
    box-shadow: 2px 2px 20px #C4C4C4;
-   border-radius: 10px;
+   border-radius: 0px 0px 10px 10px;
+   border-top: 2px white solid;
 }
 
 .dropdown-toggle {
@@ -28,8 +31,23 @@
    border-radius: 10px;
 }
 
+.dropdown-toggle::after {
+   background-image: url('../../images/caretDown.png');
+   background-size: cover;
+   border: none;
+   width: 30px;
+   height: 30px;
+   vertical-align: text-bottom;
+}
+
 .dropdown-divider {
    width: calc(100% - 24px);
    margin: auto;
    border-top: 1px solid #C4C4C4;
+}
+
+.show>.btn-light.dropdown-toggle {
+   background-color: white;
+   border-bottom-left-radius: 0px;
+   border-bottom-right-radius: 0px;
 }
