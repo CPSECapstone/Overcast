@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import GlobalState from '../../GlobalState';
 import { Container, Button } from 'react-bootstrap';
+import'./NotificationBar.css';
 
 const NotificationBar = () => {
     const [state, setState] = useContext(GlobalState);
@@ -11,10 +12,12 @@ const NotificationBar = () => {
 
     return (
         <Container className="NotifBar">
-            <Button onClick={handleClick} >
-                {state.notifications}
-            </Button>
-
+            <div className="NotifHeader">
+                <Button onClick={handleClick} >
+                    {state.notifications}
+                </Button>
+                Notifications
+            </div>
 
         </Container>
     );
