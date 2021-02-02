@@ -6,14 +6,10 @@ import'./NotificationBar.css';
 const NotificationBar = () => {
     const [state, setState] = useContext(GlobalState);
 
-    const handleClick = () => {
-        setState(state => ({ ...state, notifications: state.notifications + 1 }))
-    }
-
     return (
         <Container className="NotifBar">
             <div className="NotifHeader">
-                <div className="NotifCount" onClick={handleClick} >
+                <div className="NotifCount">
                     {state.notifications}
                 </div>
                 <div className="ShouldntNeedThisClass">
