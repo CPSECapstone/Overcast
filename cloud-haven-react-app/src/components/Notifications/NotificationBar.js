@@ -1,23 +1,33 @@
 import React, { useContext } from 'react';
 import GlobalState from '../../GlobalState';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import'./NotificationBar.css';
 
 const NotificationBar = () => {
     const [state, setState] = useContext(GlobalState);
 
     const handleClick = () => {
-        setState(state => ({ ...state, notifications: state.notifications - 1 }))
+        setState(state => ({ ...state, notifications: state.notifications + 1 }))
     }
 
     return (
         <Container className="NotifBar">
             <div className="NotifHeader">
-                <Button onClick={handleClick} >
+                <div className="NotifCount" onClick={handleClick} >
                     {state.notifications}
-                </Button>
-                Notifications
+                </div>
+                <div className="ShouldntNeedThisClass">
+                    Notifications
+                </div>
             </div>
+
+            <Row className="DummyNotif">
+                <Col className="ExclamationPt" sm={2}>!</Col>
+                <Col className="NotifText" sm={8}>Fill out New Patient Form in ‘Files’ by Wednesday 12/9/20</Col>
+                <Col sm={2} className="NotifButton">
+                    {'>'}
+                </Col>
+            </Row>
 
         </Container>
     );

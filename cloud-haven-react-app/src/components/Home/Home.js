@@ -1,15 +1,14 @@
 import React from 'react';
-import { TabSystem } from '../components';
-import NotifTest from '../Notifications/NotificationBar';
+import { TabSystem, NotificationBar } from '../components';
 import { Container } from 'react-bootstrap';
 import './Home.css';
 
 function Home() {
 
    return (
-      <Container>
+      <Container className="Home">
          <TabSystem/>
-         {/* <NotifTest/> */}
+         <NotificationBar/>
       </Container>
    );
 }
