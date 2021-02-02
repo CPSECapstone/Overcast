@@ -12,7 +12,7 @@ const NotificationBar = () => {
                 <div className="NotifCount">
                     {state.notifications}
                 </div>
-                <div className="ShouldntNeedThisClass">
+                <div className="NotifTitle">
                     Notifications
                 </div>
             </div>

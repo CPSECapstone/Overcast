@@ -19,5 +19,5 @@
    background-color: white;
    border-top-left-radius: 20px;
    display: block;
-   overflow: hidden;
+   overflow: auto;
 }
