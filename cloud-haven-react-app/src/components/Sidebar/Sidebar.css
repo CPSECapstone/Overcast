@@ -1,0 +1,55 @@
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 74px;
+    background-color: #C4C4C4;
+    min-width: 74px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.sidebar:hover{
+    width: 300px;
+}
+
+.ul{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 0px;
+    width: 100%;
+}
+
+.list{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    margin-left: -23px;
+}
+
+.items{
+    position: relative;
+    display: block;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+}
+.icon{
+    position: relative;
+    display: block;
+    min-width: 74px;
+    line-height: 74px;
+    height: 74px;
+    color: black;
+    padding: 0px;
+}
+.title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    line-height: 74px;
+    height: 74px;
+    color: white;
+    text-align: start;
+    white-space: nowrap;
+    font-size: larger;
+}

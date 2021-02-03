@@ -1,14 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { TopBar, Home, Test, CustomForm, SidebarMenu } from './components/components'
+import { TopBar, Home, Test, CustomForm, SidebarMenu, Sidebar } from './components/components'
 import './App.css';
 
 function App() {
    return (
       <div id="App">
-         {/* ---- insert side bar here ---- */}
          <div id="PageFrame">
-            <TopBar />
+            {/*<TopBar/>*/}
             <div id="MainContent">
                <Switch>
                   <Route exact path='/'
@@ -16,7 +15,9 @@ function App() {
                   <Route exact path='/customForm'
                      component={() => <CustomForm />} />
                   <Route exact path='/test'
-                     component={() => <Test />} />
+                     component={() => <Home />} />
+                  <Route exact path='/sidebar'
+                     component={() => <Sidebar />} />
                </Switch>
             </div>
          </div>

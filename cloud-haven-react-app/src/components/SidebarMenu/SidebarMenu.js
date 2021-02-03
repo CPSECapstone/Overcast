@@ -4,15 +4,19 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 import './SidebarMenu.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faHome} from "@fortawesome/free-solid-svg-icons";
+import { Home} from '../components'
+import { Route, Router} from 'react-router-dom';
 
 const homeIcon = <FontAwesomeIcon icon={faHome} />
 
 class SidebarMenu extends React.Component {
     render() {
         return (
+            
             <SideNav
                 onSelect={(selected) => {
                     // Add your code here
+                    
                 }}
             >
             <Toggle />
