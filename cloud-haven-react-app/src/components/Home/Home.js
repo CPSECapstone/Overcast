@@ -1,13 +1,15 @@
 import React from 'react';
-import { TabSystem } from '../components';
+import { TabSystem, NotificationBar } from '../components';
+import { Container } from 'react-bootstrap';
 import './Home.css';
 
 function Home() {
 
    return (
-      <div>
+      <Container className="Home">
          <TabSystem/>
-      </div>
+         <NotificationBar/>
+      </Container>
    );
 }
 
