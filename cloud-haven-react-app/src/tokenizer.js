@@ -1,5 +1,3 @@
-// https://stackoverflow.com/questions/5010288/how-to-make-a-function-wait-until-a-callback-has-been-called-using-node-js
-
 var randomizer = require("randomstring");
 
 var AWS = require("aws-sdk");
