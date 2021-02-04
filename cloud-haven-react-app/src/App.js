@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { TopBar, Home, Test, CustomForm } from './components/components'
 import GlobalState from './GlobalState';
+import * as api from './api.js';
 import './App.css';
 
 function App() {
-   const [state, setState] = useState({
-      notifications: 0
+   const [notifs, setNotifs] = useState({
+      notifications: []
    });  
 
+   useEffect(() => {
+      getNotifications()
+   }, []);
+
+   const getNotifications = () => {
+      api.getNotifs()
+         .then(res => {
+            setNotifs(res);
+            console.log(res)
+         }) 
+   };
+
    return (
-      <GlobalState.Provider value={[state, setState]}>
+      <GlobalState.Provider value={[notifs, setNotifs]}>
          <BrowserRouter>
             <div id="App">
                {/* ---- insert side bar here ---- */}

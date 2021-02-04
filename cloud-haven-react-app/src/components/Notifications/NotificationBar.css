@@ -45,6 +45,8 @@
 .DummyNotif {
     width: 100%;
     margin: 0;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 .ExclamationPt {
@@ -60,6 +62,7 @@
     font-size: 20px;
     font-weight: 500;
     padding: 0;
+    padding-top: 1em;
 }
 
 .NotifButton {
@@ -67,4 +70,5 @@
     font-size: 38px;
     font-weight: 500;
     padding-top: 0.4em;
+    padding-left: 0.4em;
 }
