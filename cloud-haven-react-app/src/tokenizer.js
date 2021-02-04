@@ -12,8 +12,17 @@ AWS.config.update({
 var tableName = "TokenVault";
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-// given a string and some data, return a tokenized value of the Data
-// for e.g. tokenize("1 Grand Ave.", "Address");
+
+/*
+given a string and some data, return a tokenized value of the Data
+example usage:
+tokenize("randomstring", "data")
+    .then(function(res){
+        token = res;
+        console.log(token);
+    })
+    .catch((err) => console.log(err));
+*/
 async function tokenize(astring, typeofdata){
     var token = randomizer.generate(32);
     var params = {
@@ -36,8 +45,13 @@ async function tokenize(astring, typeofdata){
     return token;
 }
 
-// given a token, return the json data mapped to the token
-async function retrieveData(token){
+/*
+given a token, return the json data mapped to the token
+retrieveData(token, function(data){
+    console.log(data);
+});
+*/
+async function retrieveData(token, callback){
     var params = {
         "TableName": tableName,
         "Key" : {
@@ -45,27 +59,11 @@ async function retrieveData(token){
         }
     };
 
-
     await docClient.get(params, function(err, data) {
         if (err) {
             console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
-            return JSON.stringify(data, null, 2);
+            return callback(JSON.stringify(data, null, 2));
         }
     });
 }
-
-
-let token = "1grbi4AU1WCkISBPQoB3xW58aTtErNld";
-// tokenize("randomstring", "data")
-//     .then(function(res){
-//         token = res;
-//         console.log(token);
-//     })
-//     .catch((err) => console.log(err));
-
-retrieveData(token)
-    .then(function(res){
-        console.log(res);
-    })
-    .catch((err) => console.error(err));
