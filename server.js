@@ -46,6 +46,8 @@ app.use('/Users', require('./Routes/UserAPI.js'));
 
 app.use('/Notifs', require('./Routes/NotificationsAPI.js'));
 
+app.use('/VendorApp', require('./Routes/VendorAppApi.js'));
+
 
 /* HTTP request functions */
 
