@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './Sidebar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faBars, faHome} from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +11,7 @@ function Sidebar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const showSidebar = () => setIsSidebarOpen(!isSidebarOpen);
     const className = isSidebarOpen ? "sidebar sidebar-open" : "sidebar";
+
     return (
         <div>
             <div class={className}>
