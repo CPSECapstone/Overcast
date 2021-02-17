@@ -22,14 +22,28 @@ function App() {
          }) 
    };
 
+   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+   const [isContentPushed, setIsContentPushed] = useState(false);
+   const showSidebar = () => 
+   {
+      setIsSidebarOpen(!isSidebarOpen);
+      setIsContentPushed(!isContentPushed);
+   }
+   const className = isSidebarOpen ? "sidebar sidebar-open" : "sidebar";
+   
+
    return (
       <GlobalState.Provider value={[notifs, setNotifs]}>
          <BrowserRouter>
-            <div id="App">
-               <Sidebar/>
-               <div id="PageFrame">
+            <div class="App">
+               <div class="float-sidebar">
+                  <Sidebar isSidebarOpen={isSidebarOpen} className={className} showSidebar={showSidebar}/>
+               </div>
+              
+               <div class="float-sidebar PageFrame">
+                  {/*<Sidebar isSidebarOpen={isSidebarOpen} className={className} showSidebar={showSidebar}/>*/}
                   <TopBar />
-                  <div id="MainContent">
+                  <div class="MainContent">
                      <Switch>
                         <Route exact path='/'
                            component={() => <Home />} />
@@ -40,6 +54,7 @@ function App() {
                      </Switch>
                   </div>
                </div>
+               
             </div>
          </BrowserRouter>
       </GlobalState.Provider>

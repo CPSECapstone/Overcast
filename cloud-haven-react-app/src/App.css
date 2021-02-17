@@ -1,11 +1,16 @@
-#App {
+.App {
    display: flex;
    flex-direction: row;
    background-color: #C4C4C4;
    font-family: "Roboto";
 }
 
-#PageFrame {
+.float-sidebar {
+   width: 74px;
+   float: left;
+}
+
+.PageFrame {
    height: 100%;
    width: 100%;
    border: 40px #37718E;
@@ -14,7 +19,7 @@
    border-top-left-radius: 30px;
 }
 
-#MainContent {
+.MainContent {
    width: 100%;
    height: calc(100vh - 104px);
    background-color: white;
@@ -22,3 +27,4 @@
    display: block;
    overflow: auto;
 }
+

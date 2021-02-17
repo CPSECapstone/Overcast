@@ -7,15 +7,11 @@ import {faBars, faHome} from "@fortawesome/free-solid-svg-icons";
 const homeIcon = <FontAwesomeIcon icon={faHome} />
 const barIcon = <FontAwesomeIcon icon={faBars}/>
 
-function Sidebar() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const showSidebar = () => setIsSidebarOpen(!isSidebarOpen);
-    const className = isSidebarOpen ? "sidebar sidebar-open" : "sidebar";
-
+function Sidebar(props) {
     return (
         <div>
-            <div class={className}>
-            <span class="barIcon"><i className="fas fa-bars" onClick={showSidebar} style={{ fontSize: '1.75em' }}>{barIcon}</i></span>
+            <div class={props.className}>
+            <span class="barIcon"><i className="fas fa-bars" onClick={props.showSidebar} style={{ fontSize: '1.75em' }}>{barIcon}</i></span>
                 <ul class="ul">
                     <li class="list">
                         <a class="items" href="/">
