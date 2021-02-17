@@ -6,28 +6,30 @@ import "./VendorApp.css";
 
 const VendorApp = () => {
     useEffect(() => {
-        getVendorAppData()
+        getVendorAppData();
     }, []);
 
-    const [vendorApp, setVendorApp] = useState({
-        VendorId: "",
-        VendorAuth: "",
-        Components: []
-    });
+    const [vendorId, setVendorId] = useState("");
+
+    const [vendorAuth, setVendorAuth] = useState("");
+
+    const [components, setComponents] = useState([]);
 
     const getVendorAppData = () => {
         api.getVendorAppData()
-        .then(res => {
-            setVendorApp(res);
-        });
+            .then(res => {
+                setVendorId(res.VendorId);
+                setVendorAuth(res.VendorAuth);
+                setComponents(res.Components);
+            });
     };
 
     return (
         <Container>
             <h1>
-                {vendorApp.VendorId}
+                {vendorId}
             </h1>
-            <CustomForm fields={vendorApp.Components[0].Fields}/>
+            <CustomForm fields={components[0].Fields}/>
         </Container>
     )
 }

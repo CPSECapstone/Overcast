@@ -28,7 +28,7 @@ export default props => {
 
     // TODO: add checks for as=textarea rather than type="..."
     const populateForm = () => {
-        return formData.fields.map((field) => {
+        return formFields.fields.map((field) => {
             return (
                     <Col xs={getColumnSize(field.Child)}>
                         <Form.Group>
