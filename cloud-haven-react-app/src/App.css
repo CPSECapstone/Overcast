@@ -4,19 +4,25 @@
    background-color: #C4C4C4;
    font-family: "Roboto";
 }
-
-.float-sidebar {
+.SidebarMenu {
    width: 74px;
-   float: left;
 }
+
 
 .PageFrame {
    height: 100%;
-   width: 100%;
+   width: calc(100vw - 74px);
    border: 40px #37718E;
    border-left-style: solid;
    background-color: #37718E;
    border-top-left-radius: 30px;
+   transition: 0.5s;
+}
+
+.PageFrame-open {
+   width: calc(100vw - 300px);
+   transform: translateX(226px);
+
 }
 
 .MainContent {

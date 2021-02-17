@@ -30,18 +30,18 @@ function App() {
       setIsContentPushed(!isContentPushed);
    }
    const className = isSidebarOpen ? "sidebar sidebar-open" : "sidebar";
-   
+   const classPageFrame = isContentPushed ? "PageFrame PageFrame-open" : "PageFrame";   
 
    return (
       <GlobalState.Provider value={[notifs, setNotifs]}>
          <BrowserRouter>
             <div class="App">
-               <div class="float-sidebar">
+
+               <div class="SidebarMenu">
                   <Sidebar isSidebarOpen={isSidebarOpen} className={className} showSidebar={showSidebar}/>
                </div>
               
-               <div class="float-sidebar PageFrame">
-                  {/*<Sidebar isSidebarOpen={isSidebarOpen} className={className} showSidebar={showSidebar}/>*/}
+               <div class={classPageFrame}>
                   <TopBar />
                   <div class="MainContent">
                      <Switch>
