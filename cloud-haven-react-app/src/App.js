@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { TopBar, Home, Test, CustomForm, SidebarMenu, Sidebar } from './components/components'
+import { TopBar, Home, Test, CustomForm, Sidebar } from './components/components'
 import './App.css';
 
 function App() {
