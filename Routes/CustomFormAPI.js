@@ -4,7 +4,6 @@ const router = express.Router();
 
 // eventually we will be getting the form data from the database
 router.get('/:companyName/:formName', function(req, res) {
-    var params = req.params;
     var formData = {
         formDescription: "This is a description",
         fields: [
