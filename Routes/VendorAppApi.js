@@ -11,19 +11,21 @@ router.get('/', function(req, res) {
                 Fields: [
                     {
                         Child: "textbox",
-                        //Match: regex pattern,  // optional
+                        label: "Full name",
                         Validate: true,  // optional
                         Sensitive: true // optional
                     },
                     {
-                        Child: "phoneNumber"
+                        Child: "phoneNumber",
+                        label: "Phone number"
                     },
                     {
-                        Child: "datefield"
+                        Child: "date",
+                        label: "Birthday"
                     },
                     {
                         Child: "textbox",
-                        label: "driver’s license"
+                        label: "Driver’s license number"
                     },
                 ]
             },
