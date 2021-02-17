@@ -49,3 +49,7 @@ export function getFormData(companyName, formName) {
 export function signup(signUpData) {
    return post('/Users', signUpData);
 }
+
+export function getNotifs() {
+   return get('/Notifs');
+}
