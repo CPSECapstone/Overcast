@@ -22,7 +22,6 @@
 .PageFrame-open {
    width: calc(100vw - 300px);
    transform: translateX(226px);
-
 }
 
 #MainContent {

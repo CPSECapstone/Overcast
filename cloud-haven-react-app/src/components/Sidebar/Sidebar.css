@@ -6,53 +6,87 @@
     width: 74px;
     background-color: #C4C4C4;
     min-width: 74px;
-    transition: 0.5s;
     overflow: hidden;
+    border:none;
+    transition: 0.5s;
+
 }
 
 .sidebar-open{
     width: 300px;
+    transition: 0.5s;
+}
+
+.sidebar-selected-color {
+    background-color: #37718E;
+    color:white;
+}
+
+.sidebar-app-color { 
+    background-color: white;
 }
 
 .ul{
     position: absolute;
     width: 100%;
+    padding: 0;
+    padding-top: 25px;
 }
 
 .list{
     position: relative;
     width: 100%;
     list-style: none;
-    margin-left: -23px;
+    padding-left: 0;
 }
 
-.items{
+.item{
     position: relative;
     display: block;
     display: flex;
     width: 100%;
     text-decoration: none;
+    color: black;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
+
+
 .icon{
     position: relative;
+    justify-content: center;
     display: block;
     min-width: 74px;
     line-height: 74px;
     height: 74px;
     color: black;
-    padding: 0px;
+    padding-left: 25px;
 }
+
+.circle-icon {
+    border-radius: 50%;
+}
+
+.circle-icon-selected {
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+.rectangle {
+    width: 100%;
+}
+
 .title{
     position: relative;
     display: block;
     padding: 0 10px;
     line-height: 74px;
     height: 74px;
-    color: white;
     text-align: start;
     white-space: nowrap;
     font-size: larger;
 }
+
 .barIcon{
     position: relative;
     display: block;
