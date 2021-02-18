@@ -12,9 +12,7 @@ export default props => {
         getFormData()
     }, []);
     
-    const [formFields, setFormFields] = useState({
-        fields: []
-    });
+    const [formFields, setFormFields] = useState([]);
 
     const getFormData = () => {
         setFormFields(props.fields)
@@ -28,7 +26,7 @@ export default props => {
 
     // TODO: add checks for as=textarea rather than type="..."
     const populateForm = () => {
-        return formFields.fields.map((field) => {
+        return formFields.map((field) => {
             return (
                     <Col xs={getColumnSize(field.Child)}>
                         <Form.Group>

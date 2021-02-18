@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { CustomForm } from '../components';
-import { Container } from 'react-bootstrap';
+import { VendorAppPage } from '../components';
 import * as api from '../../api.js';
 import "./VendorApp.css";
 
@@ -24,13 +23,11 @@ const VendorApp = () => {
             });
     };
 
+    if (components.length == 0) {
+        return null;
+    }
     return (
-        <Container>
-            <h1>
-                {vendorId}
-            </h1>
-            <CustomForm fields={components[0].Fields}/>
-        </Container>
+        <VendorAppPage vendorId={vendorId} components={components} />
     )
 }
 
