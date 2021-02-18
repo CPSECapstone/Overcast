@@ -1,9 +1,15 @@
 :root {
     /* colors */
+    /* primary blue */
     --main-bg-color: #37718E;
+    /* dark blue ~not in use but in our color scheme~ */
+    --dark-blue: #254E70;
+    /* red */
     --notif-color: #C33C54;
-    --top-bar-bg-color: #37718E;
-    --tab-color: #BCEAFF;
+    /* sky blue */
+    --tab-color: #8EE3EF;
+    /* turquoise ~same as darkblue~ */
+    --turquoise: #AEF3E7;
 
     --gray-accent-color: #C4C4C4;
 
