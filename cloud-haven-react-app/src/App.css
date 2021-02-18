@@ -1,13 +1,13 @@
-.App {
+#App {
    display: flex;
    flex-direction: row;
    background-color: #C4C4C4;
    font-family: "Roboto";
 }
-.SidebarMenu {
+
+#SidebarMenu {
    width: 74px;
 }
-
 
 .PageFrame {
    height: 100%;
@@ -25,7 +25,7 @@
 
 }
 
-.MainContent {
+#MainContent {
    width: 100%;
    height: calc(100vh - 104px);
    background-color: white;
@@ -33,4 +33,3 @@
    display: block;
    overflow: auto;
 }
-
