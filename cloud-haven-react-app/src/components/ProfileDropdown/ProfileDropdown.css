@@ -1,11 +1,11 @@
 #DropdownUsername {
-   font-size: 36px;
+   font-size: var(--medium-font-size);
    padding: 0px 70px 0px 0px;
 }
 
 .DropdownItem {
    color: #6B6B6B;
-   font-size: 28px;
+   font-size: var(--medium-font-size);
    min-width: 100%;
 }
 
@@ -20,7 +20,7 @@
 
 .dropdown-menu {
    width: 100%;
-   box-shadow: 2px 2px 20px #C4C4C4;
+   box-shadow: 2px 2px 20px var(--gray-accent-color);
    border-radius: 0px 0px 10px 10px;
    border-top: 2px white solid;
 }
@@ -43,7 +43,7 @@
 .dropdown-divider {
    width: calc(100% - 24px);
    margin: auto;
-   border-top: 1px solid #C4C4C4;
+   border-top: 1px solid var(--gray-accent-color);
 }
 
 .show>.btn-light.dropdown-toggle {
