@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Container, Form, Button, Col, Row } from 'react-bootstrap';
 import './CustomForm.css';
-import * as api from '../../api.js';
 
 const testCompanyName = "CalPoly";
 const testFormName = "FormName";
@@ -13,16 +12,10 @@ export default props => {
         getFormData()
     }, []);
     
-    const [formData, setFormData] = useState({
-        formDescription: '',
-        fields: []
-    });
+    const [formFields, setFormFields] = useState([]);
 
     const getFormData = () => {
-        api.getFormData(testCompanyName, testFormName)
-        .then(res => {
-            setFormData(res);
-        }) 
+        setFormFields(props.fields)
     };
 
     // TODO: add all columned fields
@@ -33,12 +26,12 @@ export default props => {
 
     // TODO: add checks for as=textarea rather than type="..."
     const populateForm = () => {
-        return formData.fields.map((field) => {
+        return formFields.map((field) => {
             return (
-                    <Col xs={getColumnSize(field.type)}>
+                    <Col xs={getColumnSize(field.Child)}>
                         <Form.Group>
                             <Form.Label>{field.label}</Form.Label>
-                            <Form.Control type={field.type} placeholder={field.placeholder ? field.placeholder : ""}/>
+                            <Form.Control type={field.Child} placeholder={field.placeholder ? field.placeholder : ""}/>
                         </Form.Group>
                     </Col>);
         });
@@ -50,9 +43,6 @@ export default props => {
                 {testFormName}
             </h1>
             <Container className="FormBox">
-                <div className="FormDescription">
-                    {formData.formDescription}
-                </div>
                 <Form>
                     <Row>
                         {populateForm()}

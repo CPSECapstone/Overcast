@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { TopBar, Home, Test, CustomForm } from './components/components'
+import { TopBar, Home, Test, CustomForm, VendorApp } from './components/components'
 import GlobalState from './GlobalState';
 import * as api from './api.js';
 import './App.css';
@@ -18,7 +18,6 @@ function App() {
       api.getNotifs()
          .then(res => {
             setNotifs(res);
-            console.log(res)
          }) 
    };
 
@@ -35,6 +34,8 @@ function App() {
                            component={() => <Home />} />
                         <Route exact path='/customForm'
                            component={() => <CustomForm />} />
+                        <Route exact path='/vendorApp'
+                           component={() => <VendorApp />} />
                         <Route exact path='/test'
                            component={() => <Test />} />
                      </Switch>
