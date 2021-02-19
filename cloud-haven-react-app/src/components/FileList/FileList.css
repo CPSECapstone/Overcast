@@ -1,0 +1,18 @@
+#FileList {
+   width: 233px;
+   background-color: var(--light-gray-accent-color);
+   padding: 12px;
+   height: calc(100vh - 104px);
+}
+
+#FileListTitle {
+   text-align: center;
+   margin-bottom: 8px;
+   font-size: var(--medium-font-size);
+   font-weight: 700;
+}
+
+.ListItem {
+   border-top: 1px solid var(--gray-accent-color);
+   padding: 14px;
+}

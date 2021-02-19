@@ -1,15 +1,20 @@
 import React from 'react';
-import { CustomForm } from '../components';
-import { Container } from 'react-bootstrap';
+import { FileList, CustomForm } from '../components';
 import './VendorAppPage.css';
+
+const isOnVendorHomePage = false;
 
 export default props => {
     return (
-        <Container>
+        <React.Fragment>
+            {isOnVendorHomePage &&
             <h1>
                 {props.vendorId}
-            </h1>
-            <CustomForm fields={props.components[0].Fields}/>
-        </Container>
+            </h1>}
+            <div id="FileFeaturePage">
+                <FileList />
+                <CustomForm fields={props.components[0].Fields}/>
+            </div>
+        </React.Fragment>
     )
 }
