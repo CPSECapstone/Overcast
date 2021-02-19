@@ -3,7 +3,7 @@ import './FileList.css';
 
 export default props => {
    return (
-      <div id="FileList">
+      <ul id="FileList">
          <h2 id="FileListTitle">File List</h2>
          <FileItem
             itemId={1}
@@ -11,6 +11,7 @@ export default props => {
             datePosted="11/12/20"
             dueDate="12/31/20"
             onClick={() => {console.log("temp onClick function");}}
+            isSelected={false}
          />
          <FileItem
             itemId={2}
@@ -18,6 +19,7 @@ export default props => {
             datePosted="11/12/20"
             dueDate="12/09/20"
             onClick={() => {console.log("temp onClick function");}}
+            isSelected={true}
          />
          <FileItem
             itemId={3}
@@ -25,6 +27,7 @@ export default props => {
             datePosted="11/11/20"
             dueDate="12/9/20"
             onClick={() => {console.log("temp onClick function");}}
+            isSelected={false}
          />
          <FileItem
             itemId={4}
@@ -32,6 +35,7 @@ export default props => {
             datePosted="11/11/20"
             dueDate="12/9/20"
             onClick={() => {console.log("temp onClick function");}}
+            isSelected={false}
          />
          <FileItem
             itemId={5}
@@ -39,6 +43,7 @@ export default props => {
             datePosted="11/11/20"
             dueDate="12/9/20"
             onClick={() => {console.log("temp onClick function");}}
+            isSelected={false}
          />
          <FileItem
             itemId={6}
@@ -46,6 +51,7 @@ export default props => {
             datePosted="11/11/20"
             dueDate="12/9/20"
             onClick={() => {console.log("temp onClick function");}}
+            isSelected={false}
          />
          <FileItem
             itemId={7}
@@ -53,21 +59,22 @@ export default props => {
             datePosted="11/11/20"
             dueDate="12/9/20"
             onClick={() => {console.log("temp onClick function");}}
+            isSelected={false}
          />
-      </div>
+      </ul>
    )
 }
 
 const FileItem = (props) => {
-   const { itemId, title, datePosted, dueDate, onClick } = props;
+   const { itemId, title, datePosted, dueDate, onClick, isSelected } = props;
    return (
-      <React.Fragment>
+      <li key={itemId}>
          <div className="ItemDivider" />
-         <button className="FileItem" onClick={onClick}>
+         <button className={ isSelected ? "FileItem SelectedItem" : "FileItem" } onClick={onClick}>
             <h3 className="ItemTitle">{title}</h3>
             <div className="DateField">Posted: {datePosted}</div>
             <div className="DateField">Posted: {dueDate}</div>
          </button>
-      </React.Fragment>
+      </li>
    );
 }

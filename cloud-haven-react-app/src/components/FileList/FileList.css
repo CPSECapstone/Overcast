@@ -30,9 +30,13 @@
    text-align: left;
 }
 
+.FileItem:focus {
+   outline: none;
+}
+
 .SelectedItem {
    background-color: white;
-   border: 1px solid white;
+   border: 6px solid white;
 }
 
 .ItemTitle {
