@@ -20,7 +20,35 @@ export default props => {
             onClick={() => {console.log("temp onClick function");}}
          />
          <FileItem
-            itemId={1}
+            itemId={3}
+            title="New Patient Waiver"
+            datePosted="11/11/20"
+            dueDate="12/9/20"
+            onClick={() => {console.log("temp onClick function");}}
+         />
+         <FileItem
+            itemId={4}
+            title="New Patient Waiver"
+            datePosted="11/11/20"
+            dueDate="12/9/20"
+            onClick={() => {console.log("temp onClick function");}}
+         />
+         <FileItem
+            itemId={5}
+            title="New Patient Waiver"
+            datePosted="11/11/20"
+            dueDate="12/9/20"
+            onClick={() => {console.log("temp onClick function");}}
+         />
+         <FileItem
+            itemId={6}
+            title="New Patient Waiver"
+            datePosted="11/11/20"
+            dueDate="12/9/20"
+            onClick={() => {console.log("temp onClick function");}}
+         />
+         <FileItem
+            itemId={7}
             title="New Patient Waiver"
             datePosted="11/11/20"
             dueDate="12/9/20"
