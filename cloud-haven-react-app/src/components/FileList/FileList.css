@@ -1,7 +1,7 @@
 #FileList {
    width: 233px;
    background-color: var(--light-gray-accent-color);
-   padding: 12px;
+   padding: 12px 0px;
    height: calc(100vh - 104px);
 }
 
@@ -12,10 +12,16 @@
    font-weight: 700;
 }
 
+.ItemDivider {
+   background-color: var(--gray-accent-color);
+   height: 2px;
+   width: 90%;
+   margin: auto;
+}
+
 .FileItem {
    border: none;
-   border-top: 2px solid var(--gray-accent-color);
-   padding: 14px 12px 14px 12px;
+   padding: 12px 24px 12px 24px;
    background-color: inherit;
    font-size: 16px;
    margin: auto;

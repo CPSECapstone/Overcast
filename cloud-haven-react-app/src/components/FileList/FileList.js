@@ -33,10 +33,13 @@ export default props => {
 const FileItem = (props) => {
    const { itemId, title, datePosted, dueDate, onClick } = props;
    return (
-      <button className="FileItem" onClick={onClick}>
-         <h3 className="ItemTitle">{title}</h3>
-         <div className="DateField">Posted: {datePosted}</div>
-         <div className="DateField">Posted: {dueDate}</div>
-      </button>
+      <React.Fragment>
+         <div className="ItemDivider" />
+         <button className="FileItem" onClick={onClick}>
+            <h3 className="ItemTitle">{title}</h3>
+            <div className="DateField">Posted: {datePosted}</div>
+            <div className="DateField">Posted: {dueDate}</div>
+         </button>
+      </React.Fragment>
    );
 }
