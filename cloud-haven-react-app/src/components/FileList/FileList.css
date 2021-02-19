@@ -12,7 +12,19 @@
    font-weight: 700;
 }
 
-.ListItem {
-   border-top: 1px solid var(--gray-accent-color);
-   padding: 14px;
+.FileItem {
+   border: none;
+   border-top: 2px solid var(--gray-accent-color);
+   padding: 14px 12px 14px 12px;
+   background-color: inherit;
+   font-size: 16px;
+   margin: auto;
+   width: 100%;
+   text-align: left;
+}
+
+.ItemTitle {
+   font-size: 16px;
+   font-weight: 600;
+   margin: 0px;
 }
