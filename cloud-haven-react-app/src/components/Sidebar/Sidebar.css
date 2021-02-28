@@ -1,0 +1,23 @@
+.sidebar {
+    background-color: var(--gray-accent-color);
+    width: 74px;
+    padding-top: 20px;
+}
+
+.sidebar-open {
+    width: 300px;
+}
+
+
+#Hamburger {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    font-size: 1.75em;
+    width:fit-content;    
+    border: none;
+    background-color: transparent;
+}
