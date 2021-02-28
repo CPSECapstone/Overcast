@@ -7,14 +7,12 @@
     background-color: #C4C4C4;
     min-width: 74px;
     overflow: hidden;
-    border:none;
     transition: 0.5s;
 
 }
 
 .sidebar-open{
     width: 300px;
-    transition: 0.5s;
 }
 
 .sidebar-selected-color {
@@ -50,7 +48,6 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
-
 
 .icon{
     position: relative;
