@@ -53,3 +53,7 @@ export function signup(signUpData) {
 export function getNotifs() {
    return get('/Notifs');
 }
+
+export function getVendorAppData() {
+   return get('/VendorApp');
+}

@@ -13,8 +13,8 @@ var dynamo = function(req, res) {
 
 dynamo.prototype.putUser = function(username, password) {
     var params = {
-        TableName: this.tableName,
-        Item : {
+        "TableName": tableName,
+        "Item" : {
             "Username" : username,
             "Password" : password
         }
@@ -31,8 +31,8 @@ dynamo.prototype.putUser = function(username, password) {
 
 dynamo.prototype.getUser = function(username) {
     var params = {
-        TableName: this.tableName,
-        Key : {
+        "TableName": tableName,
+        "Key" : {
             "Username" : username
         }
     };
@@ -45,5 +45,3 @@ dynamo.prototype.getUser = function(username) {
         }
     });
 }
-
-module.exports = dynamo;

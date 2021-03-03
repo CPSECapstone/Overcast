@@ -7,3 +7,6 @@ export {default as ProfileDropdown} from './ProfileDropdown/ProfileDropdown';
 export {default as TabSystem} from './TabSystem/TabSystem';
 export {default as NotificationBar} from './Notifications/NotificationBar';
 export {default as UserProfile} from './UserProfile/UserProfile';
+export {default as VendorApp} from './VendorApp/VendorApp';
+export {default as VendorAppPage} from './VendorAppPage/VendorAppPage';
+export {default as FileList} from './FileList/FileList';
