@@ -7,4 +7,3 @@ export {default as ProfileDropdown} from './ProfileDropdown/ProfileDropdown';
 export {default as TabSystem} from './TabSystem/TabSystem';
 export {default as NotificationBar} from './Notifications/NotificationBar';
 export {default as UserProfile} from './UserProfile/UserProfile';
-export {default as UserInfoAccordions} from './UserProfile/UserInfoAccordions'
