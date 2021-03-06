@@ -1,23 +1,74 @@
 .sidebar {
     background-color: var(--gray-accent-color);
-    width: 74px;
     padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.sidebar-closed {
+    width: 74px;
 }
 
 .sidebar-open {
     width: 300px;
 }
 
-
 #Hamburger {
     position: relative;
     display: block;
     cursor: pointer;
-    margin-right: auto;
-    margin-left: auto;
-    color: white;
-    font-size: 1.75em;
-    width:fit-content;    
+    outline: none;
     border: none;
     background-color: transparent;
+    margin-left: 15px;
+    color: white;
+    font-size: 1.75em;
 }
+
+.sidebar ul {
+    width: 100%;
+    padding:0;
+    margin: 0;
+    margin-top: 45px;
+    list-style-type: none;
+}
+
+.sidebar li {
+    list-style: none;
+    position: relative;
+    display: block;
+    display: flex;
+    padding: 0;
+    margin:0;
+    margin-bottom: 50px;
+    height: 60px;
+}
+
+a {
+    width: 100%;
+}
+
+a:hover {
+    color: none;
+}
+
+#AppName {
+    font-size: var(--medium-font-size);
+    display: inline-block;
+    margin-left: 74px;
+    padding-top: 10px;
+
+    color: black;
+}
+
+#AppIcon {
+    font-size: 1.75em;
+    position:absolute;
+    padding: 10px;
+    color:black;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 5px;
+    background-color: white;
+}
+
