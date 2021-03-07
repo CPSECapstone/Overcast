@@ -10,7 +10,6 @@ const TabSystem = () => {
     return (
         <Tabs defaultActiveKey="UserProfile" id="uncontrolled-tab-example" className="Tabs">
             <Tab eventKey="UserProfile" title={<span> <img className="TabIcon" src={profile} height="30"/> User Profile </span>}>
-                <AppDataRow/>
                 <UserProfile/>
             </Tab>
             <Tab eventKey="Messages" title={<span> <img className="TabIcon" src={chatBubble} height="30"/> Messages </span>}>
