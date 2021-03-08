@@ -1,12 +1,4 @@
 import React, { useState } from "react";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams,
-    NavLink
-  } from "react-router-dom";
 import './Sidebar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faBars, faHome, faQuestion} from "@fortawesome/free-solid-svg-icons";
