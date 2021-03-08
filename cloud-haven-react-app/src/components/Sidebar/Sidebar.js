@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import './Sidebar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faBars, faHome, faQuestion} from "@fortawesome/free-solid-svg-icons";
-import Home from "../Home/Home";
 
 const homeIcon = <FontAwesomeIcon icon={faHome} />
 const barIcon = <FontAwesomeIcon icon={faBars}/>
@@ -14,7 +13,6 @@ const menuListItemsConfig = [
 ];
 
 const renderSidebarMenuOption = (listID, iconPath, urlPath, selected) => {
-
     var classNameIcon = "";
     var className = "";
 
