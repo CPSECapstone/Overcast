@@ -16,10 +16,10 @@ const renderSidebarMenuOption = (listID, iconPath, urlPath, selected) => {
     var classNameIcon = "";
     var className = "";
 
-    if(selected){
+    if (selected) {
         classNameIcon = "current AppIcon";
         className = "current current-name rectangle AppName";
-    }else {
+    } else {
         classNameIcon = "icon-color AppIcon";
         className = "rectangle AppName";
     }
