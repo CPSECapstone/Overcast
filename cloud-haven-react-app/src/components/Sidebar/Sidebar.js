@@ -26,12 +26,12 @@ const renderSidebarMenuOption = (listID, iconPath, urlPath, selected) => {
     
     return(
 
-    <li key={listID} id={listID}>
-        <a href={urlPath} >
-            <span className={classNameIcon}><i className="fa fa-home fa-lg fa-fw ">{iconPath}</i></span>
-            <span className={className}>{listID}</span>
-        </a>
-    </li>
+        <li key={listID} id={listID}>
+            <a href={urlPath} >
+                <span className={classNameIcon}><i className="fa fa-home fa-lg fa-fw ">{iconPath}</i></span>
+                <span className={className}>{listID}</span>
+            </a>
+        </li>
     
     );
 }
