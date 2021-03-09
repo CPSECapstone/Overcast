@@ -4,77 +4,169 @@ import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import profile from "../../images/profile-user.png";
+import invisible from "../../images/invisible.png";
 import './UserProfile.css'
 
 const UserProfile = () => {
 
+    const OPEN = '0'
+    const CLOSED = null
+
     const [ editing, setEditing ] = React.useState(false);
-    //                                                       '0' = open   null = closed
-    const [ accordionsOpen, setAccordionsOpen ] = React.useState([null, null, null]);
+    const [ accordionsOpen, setAccordionsOpen ] = React.useState([null, null, null]); // '0' = open   null = closed
+    const [ personalInfoForm, setPersonalInfoForm ] = React.useState([]);
+
+    // TO DO: pull user info from passport/backend
+    const [ firstNameFormData, setFirstNameFormData ] = React.useState({
+        controlId: 'formFirstName',
+        label: 'First Name',
+        type: 'name',
+        value: 'Johnald',
+        focus: null
+    })
+    const [ lastNameFormData, setlastNameFormData ] = React.useState({
+        controlId: 'formlastName',
+        label: 'Last Name',
+        type: 'name',
+        value: 'Lastname',
+        focus: null
+    })
+    const [ emailFormData, setEmailFormData ] = React.useState({
+        controlId: 'formEmail',
+        label: 'Email Address',
+        type: 'email',
+        value: 'test@test.gov',
+        focus: null
+    })
+    const [ phoneFormData, setPhoneFormData ] = React.useState({
+        controlId: 'formPhone',
+        label: 'Phone Number',
+        type: 'tel',
+        value: '555-555-555',
+        focus: null
+    })
+    const [ birthFormData, setBirthFormData ] = React.useState({
+        controlId: 'formBirth',
+        label: 'Date of Birth',
+        type: 'date',
+        value: '01-01-2000',
+        focus: null
+    })
+
 
     const toggleEditing = () => {
-        setEditing(editing ? false : true);
+        setEditing(!editing);
     };
 
+    const clearFocus = () => {
+        return null
+    }
+
+    const handleFirstNameFormChange = (newValue) => {
+        setFirstNameFormData(prevFirstNameFormData => ({ ...prevFirstNameFormData,
+            value: newValue,
+            focus: 'notnull'
+        }));
+    }
+
     const handleAccordionClick = (accordionNumber) => {
-        console.log(accordionsOpen[accordionNumber])
         var accordionsOpenTemp = accordionsOpen
-        if (accordionsOpenTemp[accordionNumber] == '0') {
-            accordionsOpenTemp[accordionNumber] = null
+        if (accordionsOpenTemp[accordionNumber] === OPEN) {
+            accordionsOpenTemp[accordionNumber] = CLOSED
         } else {
-            accordionsOpenTemp[accordionNumber] = '0'
+            accordionsOpenTemp[accordionNumber] = OPEN
         }
         setAccordionsOpen(accordionsOpenTemp)
-        console.log(accordionsOpen)
     }
 
     const ProfileHeader = () => {
         return (
-            <Container>
-                <Row className="ProfileHeader">
-                    <Col md={{ offset: 5 }}>
-                        <img src={profile} height="150"/>
-                    </Col>
-                    <Col md={{ offset: 5 }}>
-                        <Button className='EditButton' onClick={toggleEditing}>Edit</Button>{' '}
-                    </Col>
-                </Row>
+            <Container className='d-flex align-items-start justify-content-between'>
+                <img src={invisible} height="75" alt=""/>
+                <img src={profile} height="150" alt="user-profile"/>
+                <EditButton/>
             </Container>
+        )
+    }
 
+    const EditButton = () => {
+        return (
+            <Button className='EditButton' onClick={toggleEditing}>Edit</Button>
         )
     }
 
     const UserInfoAccordions = () => {
 
+        const Accordions = (accordNum, accordInfo) => {
+            return (
+                <Accordion className='InfoAccordion' defaultActiveKey={accordionsOpen[accordNum]}>
+                    <Card className='AccordionCard'>
+                        <Accordion.Toggle as={Card.Header} eventKey="0" onClick={() => { handleAccordionClick(accordNum) }}/>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+                                {accordInfo}
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
+            )
+        }
+
+        const FirstNameForm = (props) => {
+            const {formData, formHandler} = props;
+            return (
+                <Form.Group controlId={formData.controlId}>
+                    <Form.Label>{formData.label}</Form.Label>
+                    <Form.Control
+                        type={formData.type}
+                        autoFocus={formData.focus}
+                        value={formData.value}
+                        onChange={e => formHandler(e.target.value)}
+                        disabled={!editing} />
+                </Form.Group>
+            )
+        }
+
         const PersonalInformation = () => {
             return (
                 <Container>
-                    <Row>
-                        <Col md={{ span: 4, offset: 0 }}>
-                        <Form>
-                        <Form.Group controlId="formEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" defaultValue='test@test.com' disabled={!editing} />
-                        </Form.Group>
-                        </Form>
-                        </Col>
-                        <Col md={{ span: 3, offset: 1 }}>
-                        <Form>
-                        <Form.Group controlId="formPhone">
-                            <Form.Label>Phone Number</Form.Label>
-                            <Form.Control type="tel" defaultValue='555-555-5555' disabled={!editing} />
-                        </Form.Group>
-                        </Form>
-                        </Col>
-                        <Col md={{ span: 3, offset: 1 }}>
-                        <Form>
-                        <Form.Group controlId="formBirth">
-                            <Form.Label>Date of Birth</Form.Label>
-                            <Form.Control type="date" disabled={!editing} />
-                        </Form.Group>
-                        </Form>
-                        </Col>
-                    </Row>
+                    <Form>
+                        <Row>
+                            <Col>
+                                <FirstNameForm formData={firstNameFormData} formHandler={handleFirstNameFormChange}/>
+                            </Col>
+
+                            <Col>
+                                <Form.Group controlId="formLastName">
+                                    <Form.Label>Last Name</Form.Label>
+                                    <Form.Control type="name" defaultValue='Testman' disabled={!editing} />
+                                </Form.Group>
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <Col>
+                                <Form.Group controlId="formEmail">
+                                    <Form.Label>Email address</Form.Label>
+                                    <Form.Control type="email" defaultValue='test@test.com' disabled={!editing} />
+                                </Form.Group>
+                            </Col>
+
+                            <Col>
+                                <Form.Group controlId="formPhone">
+                                    <Form.Label>Phone Number</Form.Label>
+                                    <Form.Control type="tel" defaultValue='555-555-5555' disabled={!editing} />
+                                </Form.Group>
+                            </Col>
+
+                            <Col>
+                                <Form.Group controlId="formBirth">
+                                    <Form.Label>Date of Birth</Form.Label>
+                                    <Form.Control type="date" disabled={!editing} />
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                    </Form>
                 </Container>
             )
         }
@@ -83,75 +175,31 @@ const UserProfile = () => {
             <Container>
                 <Container>
                     <Row>
-                        <Col md={{ span: 5, offset: 0 }}>
-                        <Form>
-                        <Form.Group controlId="formFirstName">
-                            <Form.Label>First Name</Form.Label>
-                            <Form.Control type="name" defaultValue='John' disabled={!editing} />
-                        </Form.Group>
-                        </Form>
-                        </Col>
-                        <Col md={{ span: 5, offset: 2 }}>
-                        <Form>
-                        <Form.Group controlId="formLastName">
-                            <Form.Label>Last Name</Form.Label>
-                            <Form.Control type="name" defaultValue='Testman' disabled={!editing} />
-                        </Form.Group>
-                        </Form>
-                        </Col>
                     </Row>
                 </Container>
 
-
-                <Container className='CardHeader'>
+                <header className='CardHeader'>
                     Personal Information
-                </Container>
-                <Accordion className='InfoAccordion' defaultActiveKey={accordionsOpen[0]}>
-                    <Card className='AccordionCard' onClick={() => { handleAccordionClick(0) }}>
-                        <Accordion.Toggle className='float-right' as={Card.Header} eventKey="0" >
+                </header>
+                {Accordions(0, <PersonalInformation/>)}
 
-                        </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>
-                                <PersonalInformation/>
-                            </Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
-
-                <Container className='CardHeader'>
+                <header className='CardHeader'>
                     Contact Details
-                </Container>
-                <Accordion className='InfoAccordion' defaultActiveKey={accordionsOpen[1]}>
-                    <Card className='AccordionCard' onClick={() => { handleAccordionClick(1) }}>
-                        <Accordion.Toggle as={Card.Header} eventKey="1">
+                </header>
+                {Accordions(1, <Card.Body>Contact Details go here</Card.Body>)}
 
-                        </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="1">
-                            <Card.Body>Contact Details go here</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
-
-                <Container className='CardHeader'>
+                <header className='CardHeader'>
                     Education
-                </Container>
-                <Accordion className='InfoAccordion' defaultActiveKey={accordionsOpen[2]}>
-                    <Card className='AccordionCard' onClick={() => { handleAccordionClick(2) }}>
-                        <Accordion.Toggle as={Card.Header} eventKey="2">
+                </header>
+                {Accordions(2, <Card.Body>Education goes here (maybe)</Card.Body>)}
 
-                        </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="2">
-                            <Card.Body>Education goes here (maybe)</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
             </Container>
         )
     }
 
     return (
         <Container className='UserProfile'>
+            {/* <EditButton/> */}
             <ProfileHeader/>
             <UserInfoAccordions/>
         </Container>
