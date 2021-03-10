@@ -1,0 +1,29 @@
+.UserProfile {
+    margin-top: 2%;
+}
+
+.EditButton {
+    background-color: #EDEDED;
+    color: #000000;
+    border-color: #EDEDED;
+}
+
+.EditButton:hover {
+    background-color: #E5E5E5;
+    color: #000000;
+    border-color: #EDEDED;
+}
+
+.InfoAccordion {
+    margin-top: 0.5%;
+    margin-bottom: 3%;
+}
+
+.AccordionCard {
+    background-color: #e5e5e5;
+}
+
+.CardHeader {
+    margin-top: 2%;
+    font-weight: bold;
+}
