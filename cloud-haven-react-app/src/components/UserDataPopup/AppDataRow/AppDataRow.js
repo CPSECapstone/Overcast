@@ -5,6 +5,8 @@ import checkmark from "../../../images/black-checkmark.png";
 import * as api from '../../../api.js';
 import './AppDataRow.css';
 
+// need to add this comment to open a PR
+
 export default props => {
     const [vendorId, setVendorId] = useState("");
     const [vendorName, setVendorName] = useState("");
