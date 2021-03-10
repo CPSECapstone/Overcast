@@ -65,6 +65,7 @@
     font-size: 1.75em;
     position:absolute;
     padding: 10px;
+    display: flex;
     color:black;
     width: 60px;
     height: 60px;
@@ -87,4 +88,13 @@
 
 .icon-color {
     background-color: white;
+}
+
+.icon-size {
+    width: 45px;
+    height: 45px;
+}
+
+.sidebar i {
+    justify-content: center;
 }

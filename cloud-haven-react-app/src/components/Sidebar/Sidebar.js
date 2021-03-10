@@ -8,7 +8,7 @@ const barIcon = <FontAwesomeIcon icon={faBars}/>
 const questionMarkIcon = <FontAwesomeIcon icon={faQuestion}/>
 
 const menuListItemsConfig = [
-    {iconPath:homeIcon, urlPath: "/", listID: "Home"},
+    {iconPath: homeIcon, urlPath: "/", listID: "Home"},
     {iconPath: questionMarkIcon, urlPath: "/Test", listID: "TestApplication"}
 ];
 
@@ -25,14 +25,12 @@ const renderSidebarMenuOption = (listID, iconPath, urlPath, selected) => {
     }
     
     return(
-
         <li key={listID} id={listID}>
             <a href={urlPath} >
-                <span className={classNameIcon}><i className="fa fa-home fa-lg fa-fw ">{iconPath}</i></span>
+                <span className={classNameIcon}><i className="fa fa-home fa-lg fa-fw">{iconPath}</i></span>
                 <span className={className}>{listID}</span>
             </a>
         </li>
-    
     );
 }
 
