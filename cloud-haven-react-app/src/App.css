@@ -31,10 +31,10 @@
 #PageFrame {
    height: 100%;
    width: 100%;
-   border: 40px var(--main-bg-color);
+   border: 20px var(--main-bg-color);
    border-left-style: solid;
    background-color: var(--main-bg-color);
-   border-top-left-radius: 30px;
+   border-top-left-radius: 20px;
 }
 
 #MainContent {
