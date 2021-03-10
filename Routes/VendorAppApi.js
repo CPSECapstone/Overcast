@@ -8,11 +8,14 @@ router.get('/', function(req, res) {
         Components: [
             {
                 Component: "form",
+                Title: "Some title",
+                Description: "Some description",
                 Fields: [
                     {
-                        Child: "textbox",
-                        label: "Full name",
+                        Child: "email",
+                        Match: "regex pattern",
                         Validate: true,  // optional
+                        Required: true, // optional
                         Sensitive: true // optional
                     },
                     {
