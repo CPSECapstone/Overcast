@@ -13,7 +13,7 @@ export default props => {
             </h1>}
             <div id="FileFeaturePage">
                 <FileList />
-                <CustomForm fields={props.components[0].Fields}/>
+                <CustomForm fields={props.components[0].Fields} />
             </div>
         </React.Fragment>
     )
