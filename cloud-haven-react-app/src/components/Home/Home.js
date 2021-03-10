@@ -8,6 +8,7 @@ function Home() {
    return (
       <Container className="Home">
          <TabSystem/>
+         <NotificationBar/>
       </Container>
    );
 }
