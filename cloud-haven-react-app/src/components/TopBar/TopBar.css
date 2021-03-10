@@ -6,7 +6,6 @@
    width: 100%;
    display: flex;
    flex-direction: row;
-
 }
 
 #ProfileDropdown {
@@ -16,10 +15,10 @@
 
 #CloudHavenLogo {
    height: 50px;
-   width: 300px;
+   width: 280px;
    color: white;
    vertical-align: auto;
-   margin: 16px 0px;
+   margin: 0;
 }
 
 a:hover {
