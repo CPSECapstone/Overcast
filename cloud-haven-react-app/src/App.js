@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { TopBar, Home, Test, CustomForm, VendorApp } from './components/components'
+import { TopBar, Home, Test, CustomForm, VendorApp, AppDataRow } from './components/components'
 import GlobalState from './GlobalState';
 import * as api from './api.js';
 import './App.css';
@@ -36,6 +36,8 @@ function App() {
                            component={() => <CustomForm />} />
                         <Route exact path='/vendorApp'
                            component={() => <VendorApp />} />
+                        <Route exact path='/dataManagement'
+                           component={() => <AppDataRow />} />
                         <Route exact path='/test'
                            component={() => <Test />} />
                      </Switch>
