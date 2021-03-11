@@ -16,8 +16,7 @@ router.get('/', function(req, res) {
                         Match: "regex pattern",
                         label: "Email",
                         Validate: true,  // optional
-                        Required: true, // optional
-                        Sensitive: true // optional
+                        Required: false // optional
                     },
                     {
                         Child: "phoneNumber",
