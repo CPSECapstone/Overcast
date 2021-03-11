@@ -10,3 +10,4 @@ export {default as VendorApp} from './VendorApp/VendorApp';
 export {default as VendorAppPage} from './VendorAppPage/VendorAppPage';
 export {default as FileList} from './FileList/FileList';
 export {default as Sidebar} from './Sidebar/Sidebar';
+export {default as AppDataRow} from './UserDataPopup/AppDataRow/AppDataRow'
