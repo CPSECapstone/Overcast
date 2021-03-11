@@ -1,10 +1,12 @@
-.UserProfile {
+.UserProfileWrapper {
     margin-top: 2%;
 }
 
 .EditButton {
     background-color: #EDEDED;
     color: #000000;
+    width: 6em;
+    height: 3em;
     border-color: #EDEDED;
 }
 
@@ -17,14 +19,22 @@
 .InfoAccordion {
     margin-top: 0.5%;
     margin-bottom: 3%;
+    width: 100%;
 }
 
 .AccordionCard {
     background-color: #e5e5e5;
 }
 
-.CardHeader {
+.AccordionHeaderText {
     margin-top: 2%;
     font-weight: bold;
     color: #254e70;
+}
+
+.AccordionHeader {
+    margin-top: 2em;
+    font-size: 18px;
+    font-weight: bold;;
+    text-align: start;
 }
