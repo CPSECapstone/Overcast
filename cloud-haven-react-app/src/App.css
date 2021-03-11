@@ -20,9 +20,6 @@
     --large-font-size: 36px;
     --title-font-size: 58px;
 
-    /* profile dropdown button */
-    --button-margin-bottom: 35px;
-
     /* height of top bar */
     --top-bar-height: 60px;
 }
@@ -45,7 +42,6 @@
 
 #MainContent {
    width: 100%;
-   /*height: calc(100vh - 104px);*/
    height: calc(100vh - 60px);
    background-color: white;
    border-top-left-radius: 20px;
