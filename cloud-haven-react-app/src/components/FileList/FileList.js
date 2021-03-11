@@ -14,7 +14,7 @@ export default ({ files, setCurrentFile, currentFileId }) => {
                         datePosted={datePosted}
                         dueDate={dueDate}
                         filePath={filePath}
-                        onClick={() => setCurrentFile(file)}
+                        onClick={() => setCurrentFile(id)}
                         isSelected={id == currentFileId}
                     />
                 )
@@ -29,7 +29,6 @@ const FileItem = (props) => {
         title,
         datePosted,
         dueDate,
-        filePath,
         onClick,
         isSelected,
     } = props

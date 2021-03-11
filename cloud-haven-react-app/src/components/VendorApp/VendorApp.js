@@ -26,6 +26,7 @@ const VendorApp = () => {
     if (components.length == 0) {
         return null;
     }
+
     return (
         <VendorAppPage vendorId={vendorId} components={components} />
     )

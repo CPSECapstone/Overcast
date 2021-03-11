@@ -8,8 +8,30 @@ router.get('/', function(req, res) {
         VendorAuth: "Password",
         Components: [
             {
-                Component: "form",
-                Title: "Some title",
+                Component: 'file',
+                id: 0,
+                title: 'New Patient Wavier',
+                datePosted: '11/12/20',
+                dueDate: '12/31/20',
+                fileType: 'pdf',
+                filePath: 0,
+            },
+            {
+                Component: 'file',
+                id: 1,
+                title: 'Health Insurance',
+                datePosted: '11/12/20',
+                dueDate: '12/09/20',
+                fileType: 'pdf',
+                filePath: 1,
+            },
+            {
+                Component: 'file',
+                id: 2,
+                title: 'New Patient Waiver',
+                datePosted: '11/11/20',
+                dueDate: '12/9/20',
+                fileType: 'form',
                 Description: "Some description",
                 Fields: [
                     {
@@ -37,7 +59,7 @@ router.get('/', function(req, res) {
                         Validate: false,
                         Required: true
                     },
-                ]
+                ],
             },
             {
                 Component: "card",

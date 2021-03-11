@@ -6,60 +6,19 @@ import pdfTest2 from '../../static/test2.pdf'
 
 const isOnVendorHomePage = false
 
-const files = [
-    {
-        id: 1,
-        title: 'New Patient Wavier',
-        datePosted: '11/12/20',
-        dueDate: '12/31/20',
-        filePath: pdfTest1,
-    },
-    {
-        id: 2,
-        title: 'Health Insurance',
-        datePosted: '11/12/20',
-        dueDate: '12/09/20',
-        filePath: pdfTest2,
-    },
-    {
-        id: 3,
-        title: 'New Patient Waiver',
-        datePosted: '11/11/20',
-        dueDate: '12/9/20',
-        filePath: '',
-    },
-    {
-        id: 4,
-        title: 'New Patient Waiver',
-        datePosted: '11/11/20',
-        dueDate: '12/9/20',
-        filePath: '',
-    },
-    {
-        id: 5,
-        title: 'New Patient Waiver',
-        datePosted: '11/11/20',
-        dueDate: '12/9/20',
-        filePath: '',
-    },
-    {
-        id: 6,
-        title: 'New Patient Waiver',
-        datePosted: '11/11/20',
-        dueDate: '12/9/20',
-        filePath: '',
-    },
-    {
-        id: 7,
-        title: 'New Patient Waiver',
-        datePosted: '11/11/20',
-        dueDate: '12/9/20',
-        filePath: '',
-    },
-]
+// NOTE: until we figure out how we want to handle accessing pdfs from the backend,
+// we have these temporary test pdf files here. This is definitely a temporary measure.
+// Right now, we just get an index number from the backend and use that number to choose
+// from the two below test files.
+const testPdfs = [
+    pdfTest1,
+    pdfTest2,
+];
 
 export default (props) => {
-    const [currentFile, setCurrentFile] = React.useState(files[0])
+    const files = props.components.filter(component => component.Component === 'file');
+    const [currentFileIndex, setCurrentFileIndex] = React.useState(0);
+    var currentFile = files[currentFileIndex];
 
     return (
         <React.Fragment>
@@ -67,13 +26,13 @@ export default (props) => {
             <div id="FileFeaturePage">
                 <FileList
                     files={files}
-                    setCurrentFile={setCurrentFile}
+                    setCurrentFile={setCurrentFileIndex}
                     currentFileId={currentFile.id}
                 />
-                {currentFile.filePath == '' ? (
-                    <CustomForm fields={props.components[0].Fields} />
+                {currentFile.fileType == 'form' ? (
+                    <CustomForm name={currentFile.title} fields={currentFile.Fields} />
                 ) : (
-                    <FileViewer filePath={currentFile.filePath} />
+                    <FileViewer filePath={testPdfs[currentFile.filePath]} />
                 )}
             </div>
         </React.Fragment>
