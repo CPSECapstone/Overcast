@@ -30,7 +30,7 @@ export default (props) => {
                     currentFileId={currentFile.id}
                 />
                 {currentFile.fileType == 'form' ? (
-                    <CustomForm fields={currentFile.Fields} />
+                    <CustomForm name={currentFile.title} fields={currentFile.Fields} />
                 ) : (
                     <FileViewer filePath={testPdfs[currentFile.filePath]} />
                 )}

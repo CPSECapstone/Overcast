@@ -78,7 +78,7 @@ export default props => {
     return (
         <Container className="CustomFormContainer">
             <h1>
-                {testFormName}
+                {props.name}
             </h1>
             <Container className="FormBox">
                 <Form noValidate validated={validated} onSubmit={submitForm}>
