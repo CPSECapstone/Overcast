@@ -3,7 +3,8 @@ const router = express.Router();
 
 router.get('/', function(req, res) {
     var vendorAppData = {
-        VendorId: "UUID",
+        VendorId: "AH",
+        VendorName: "Apollo Healthcare",
         VendorAuth: "Password",
         Components: [
             {
@@ -71,7 +72,7 @@ router.get('/', function(req, res) {
                 headers: [    // optional
                     "Header 1"
                 ],
-                rows: [    
+                rows: [
                     {
                         Component: "text",
                         Content: "I am a table cell",
@@ -85,7 +86,7 @@ router.get('/', function(req, res) {
             }
         ]
     };
-    
+
     res.json(vendorAppData);
 });
 
