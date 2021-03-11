@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from 'react-bootstrap/Dropdown';
 import profile from "../../images/profile-user.png";
 import settings from "../../images/settings.png";
 import logout from "../../images/logout.png";

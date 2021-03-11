@@ -32,24 +32,32 @@ router.get('/', function(req, res) {
                 datePosted: '11/11/20',
                 dueDate: '12/9/20',
                 fileType: 'form',
+                Description: "Some description",
                 Fields: [
                     {
-                        Child: "textbox",
-                        label: "Full name",
+                        Child: "email",
+                        Match: "regex pattern",
+                        label: "Email",
                         Validate: true,  // optional
-                        Sensitive: true // optional
+                        Required: false // optional
                     },
                     {
                         Child: "phoneNumber",
-                        label: "Phone number"
+                        label: "Phone number",
+                        Validate: false,
+                        Required: true
                     },
                     {
                         Child: "date",
-                        label: "Birthday"
+                        label: "Birthday",
+                        Validate: true,
+                        Required: true
                     },
                     {
                         Child: "textbox",
-                        label: "Driver’s license number"
+                        label: "Driver’s license number",
+                        Validate: false,
+                        Required: true
                     },
                 ],
             },
