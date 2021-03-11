@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { TopBar, Home, Test, CustomForm, VendorApp, AppDataRow } from './components/components'
+import { TopBar, Home, Test, CustomForm, VendorApp, Sidebar, AppDataRow} from './components/components'
 import GlobalState from './GlobalState';
 import * as api from './api.js';
 import './App.css';
@@ -25,7 +25,7 @@ function App() {
       <GlobalState.Provider value={[notifs, setNotifs]}>
          <BrowserRouter>
             <div id="App">
-               {/* ---- insert side bar here ---- */}
+               <Sidebar />
                <div id="PageFrame">
                   <TopBar />
                   <div id="MainContent">
