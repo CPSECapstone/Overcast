@@ -2,9 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Container, Form, Button, Col, Row } from 'react-bootstrap';
 import './CustomForm.css';
 
-const testCompanyName = "CalPoly";
 const testFormName = "FormName";
-
 
 export default props => {
     
