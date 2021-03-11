@@ -29,9 +29,9 @@
 }
 
 #PageFrame {
-   height: 100%;
+   height: 100vh;
    width: 100%;
-   border: 20px var(--main-bg-color);
+   border-left: 20px var(--main-bg-color);
    border-left-style: solid;
    background-color: var(--main-bg-color);
    border-top-left-radius: 20px;
@@ -39,7 +39,8 @@
 
 #MainContent {
    width: 100%;
-   height: calc(100vh - 104px);
+   /*height: calc(100vh - 104px);*/
+   height: calc(100vh - 60px);
    background-color: white;
    border-top-left-radius: 20px;
    display: block;
