@@ -29,6 +29,7 @@
    background-color: white;
    padding: 0px 18px;
    border-radius: 10px;
+   margin-bottom: calc(var(--top-bar-height)* 0.58);
 }
 
 .dropdown-toggle::after {
