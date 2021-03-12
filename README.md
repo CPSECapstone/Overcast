@@ -65,8 +65,7 @@ Going through the above links should tell you how to set the database up locally
     
 # Continuous Integration
 
-Continuous Integration is 'set up' but is not currently working.
-https://travis-ci.com/github/CPSECapstone/Overcast
+[Status](https://travis-ci.com/github/CPSECapstone/Overcast)
     
 # Contributor Guide
 You're all set up to start contributing to CloudHaven! Make sure to follow the code standard that is listed below. Happy coding :)
