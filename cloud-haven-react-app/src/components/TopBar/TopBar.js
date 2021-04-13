@@ -6,7 +6,10 @@ function TopBar() {
    return (
       <div id="TopBar">
          <a href="/">
-            <img id="CloudHavenLogo" alt="Cloud Haven" src={require("../../images/CloudHavenLogo.png")}/>
+            <div id="TopBarHeader">
+            <img id="CloudHavenLogo" alt="Cloud Haven" src={require("../../images/cloudhavensiteicon.png")}/>
+            <span id="CloudHavenHeaderText">CloudHaven</span>
+            </div>
          </a>
          <div id="ProfileDropdown" className="pull-right">
             <ProfileDropdown />
