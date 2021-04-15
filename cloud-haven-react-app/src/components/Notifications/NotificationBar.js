@@ -15,17 +15,17 @@ const NotificationBar = () => {
         else if (notif.type === "form") {
             return "Fill out " + notif.title + " in 'Files' by " + notif.dueDate;
         }
-    }   
+    }
 
     const populateNotifBar = () => {
         return (notifs.notifications).map((notif) => {
             return (
                 <Row className="DummyNotif">
-                    <Col className="ExclamationPt" sm={2}>!</Col>
-                    <Col className="NotifText" sm={8}>
+                    <Col className="ExclamationPt" xs={2}>!</Col>
+                    <Col className="NotifText" xs={8}>
                         {createNotif(notif)}
                     </Col>
-                    <Col sm={2} className="NotifButton">
+                    <Col className="NotifButton" xs={2}>
                         {'>'}
                     </Col>
                 </Row>
