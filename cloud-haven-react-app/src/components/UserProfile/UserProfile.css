@@ -39,3 +39,12 @@
     font-weight: bold;;
     text-align: start;
 }
+
+.SettingsIcon {
+    margin-top: 0.7em;
+}
+
+.ManageDataText {
+    font-size: 22px;
+    color: #254E70;
+}

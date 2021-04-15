@@ -1,9 +1,10 @@
 import React from "react";
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Nav } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import profile from "../../images/profile-user.png";
+import settings from "../../images/settings.png"
 import invisible from "../../images/invisible.png";
 import './UserProfile.css'
 
@@ -17,7 +18,7 @@ const UserProfile = () => {
     const [ email, setEmail ] = React.useState('test@test.gov');
     const [ phoneNumber, setPhoneNumber ] = React.useState('555-555-5555');
     const [ birthDate, setBirthDate ] = React.useState('2021-01-01');
-    
+
     const [ firstNameFormData, setFirstNameFormData ] = React.useState({
         controlId: 'formFirstName',
         label: 'First Name',
@@ -66,6 +67,19 @@ const UserProfile = () => {
     const EditButton = () => {
         return (
             <Button className='EditButton' onClick={toggleEditing}>Edit</Button>
+        )
+    }
+
+    const ManageDataButton = () => {
+        return (
+            <Nav
+                className="justify-content-center"
+                activeKey="/home"
+                onSelect={(selectedKey) => alert(`${selectedKey} goes here`)}
+            >
+                <img className="SettingsIcon" src={settings} height="30" />
+                <Nav.Link className="ManageDataText" eventKey="ManageDataPopup"> <u>Manage Data</u></Nav.Link>
+            </Nav>
         )
     }
 
@@ -155,6 +169,8 @@ const UserProfile = () => {
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
+
+            <ManageDataButton/>
 
         </Container>
 
