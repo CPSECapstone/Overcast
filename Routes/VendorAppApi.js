@@ -3,31 +3,63 @@ const router = express.Router();
 
 router.get('/', function(req, res) {
     var vendorAppData = {
-        VendorId: "UUID",
+        VendorId: "AH",
+        VendorName: "Apollo Healthcare",
         VendorAuth: "Password",
         Components: [
             {
-                Component: "form",
+                Component: 'file',
+                id: 0,
+                title: 'New Patient Wavier',
+                datePosted: '11/12/20',
+                dueDate: '12/31/20',
+                fileType: 'pdf',
+                filePath: 0,
+            },
+            {
+                Component: 'file',
+                id: 1,
+                title: 'Health Insurance',
+                datePosted: '11/12/20',
+                dueDate: '12/09/20',
+                fileType: 'pdf',
+                filePath: 1,
+            },
+            {
+                Component: 'file',
+                id: 2,
+                title: 'New Patient Waiver',
+                datePosted: '11/11/20',
+                dueDate: '12/9/20',
+                fileType: 'form',
+                Description: "Some description",
                 Fields: [
                     {
-                        Child: "textbox",
-                        label: "Full name",
+                        Child: "email",
+                        Match: "regex pattern",
+                        label: "Email",
                         Validate: true,  // optional
-                        Sensitive: true // optional
+                        Required: false // optional
                     },
                     {
                         Child: "phoneNumber",
-                        label: "Phone number"
+                        label: "Phone number",
+                        Validate: false,
+                        Required: true
                     },
                     {
                         Child: "date",
-                        label: "Birthday"
+                        label: "Birthday",
+                        Validate: true,
+                        Required: true
                     },
                     {
                         Child: "textbox",
-                        label: "Driver’s license number"
+                        label: "Driver’s license number",
+                        Validate: false,
+                        Required: true
                     },
-                ]
+                ],
             },
             {
                 Component: "card",
@@ -62,7 +94,7 @@ router.get('/', function(req, res) {
                 headers: [    // optional
                     "Header 1"
                 ],
-                rows: [    
+                rows: [
                     {
                         Component: "text",
                         Content: "I am a table cell",
@@ -76,7 +108,7 @@ router.get('/', function(req, res) {
             }
         ]
     };
-    
+
     res.json(vendorAppData);
 });
 

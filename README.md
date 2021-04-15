@@ -32,7 +32,7 @@ Database: DynamoDB
 
 4. Run 'npm install' in 'Overcast/' to update the packages and dependencies.
 
-5. Run 'node server.js' in 'Overcast/backend/' to run the backend server.
+5. Run 'node server.js' in 'Overcast/' to run the backend server.
     - If the server is running, you will see this message in terminal:
     'Server up and listening on 5000!'
 
@@ -46,7 +46,7 @@ Database: DynamoDB
 
 9. Run 'npm i --save @fortawesome/react-fontawesome' in 'Overcast/cloud-haven-react-app/'.
     
-10. Run 'npm start' in 'Overcast/cloud-haven-react-app/'.
+10. Run 'npm start' in 'Overcast/cloud-haven-react-app/' to run the web application.
 
 ## Setting Up The Local Database
 1. Install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html#cliv2-mac-install-cmd)
@@ -65,8 +65,7 @@ Going through the above links should tell you how to set the database up locally
     
 # Continuous Integration
 
-Continuous Integration is 'set up' but is not currently working.
-https://travis-ci.com/github/CPSECapstone/Overcast
+[Status](https://travis-ci.com/github/CPSECapstone/Overcast)
     
 # Contributor Guide
 You're all set up to start contributing to CloudHaven! Make sure to follow the code standard that is listed below. Happy coding :)
