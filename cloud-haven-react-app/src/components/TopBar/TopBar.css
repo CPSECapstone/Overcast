@@ -12,14 +12,26 @@
    margin-left: auto;
    margin-right: 25px;
 }
+#TopBarHeader {
+   display: flex;
+}
 
 #CloudHavenLogo {
+   display: inline-block;
    position: absolute;
-   height: 50px;
-   width: 280px;
+   height: 40px;
+   width: 40px;
    color: white;
    vertical-align: auto;
    margin-top: 5px;
+}
+
+#CloudHavenHeaderText {
+   display: inline-block;
+   color: white;
+   vertical-align: center;
+   margin-left: 50px;
+   font-size: var(--large-font-size);
 }
 
 a:hover {
