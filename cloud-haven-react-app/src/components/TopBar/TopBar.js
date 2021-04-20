@@ -7,8 +7,8 @@ function TopBar() {
       <div id="TopBar">
          <a href="/">
             <div id="TopBarHeader">
-            <img id="CloudHavenLogo" alt="Cloud Haven" src={require("../../images/cloudhavensiteicon.png")}/>
-            <span id="CloudHavenHeaderText">CloudHaven</span>
+               <img id="CloudHavenLogo" alt="Cloud Haven" src={require("../../images/cloudhavensiteicon.png")}/>
+               <span id="CloudHavenHeaderText">CloudHaven</span>  
             </div>
          </a>
          <div id="ProfileDropdown" className="pull-right">
