@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form'
 import profile from "../../images/profile-user.png";
 import settings from "../../images/settings.png"
 import invisible from "../../images/invisible.png";
+import caretDown from "../../images/caretDown.png";
 import './UserProfile.css'
 
 const UserProfile = () => {
@@ -18,6 +19,7 @@ const UserProfile = () => {
     const [ email, setEmail ] = React.useState('test@test.gov');
     const [ phoneNumber, setPhoneNumber ] = React.useState('555-555-5555');
     const [ birthDate, setBirthDate ] = React.useState('2021-01-01');
+    const [ buttonText, setButtonText ] = React.useState("Edit")
 
     const [ firstNameFormData, setFirstNameFormData ] = React.useState({
         controlId: 'formFirstName',
@@ -52,6 +54,13 @@ const UserProfile = () => {
 
     const toggleEditing = () => {
         setEditing(!editing);
+        
+        if (!editing) {
+            setButtonText("Save")
+        }
+        else {
+            setButtonText("Edit")
+        }  
     };
 
     const ProfileHeader = () => {
@@ -66,7 +75,7 @@ const UserProfile = () => {
 
     const EditButton = () => {
         return (
-            <Button className='EditButton' onClick={toggleEditing}>Edit</Button>
+            <Button className='EditButton' onClick={toggleEditing}>{buttonText}</Button>
         )
     }
 
@@ -87,73 +96,74 @@ const UserProfile = () => {
     return (
         <Container className='UserProfileWrapper'>
             <ProfileHeader/>
-            <header className="AccordionHeader">Personal Information</header>
+                <header className="AccordionHeader">Personal Information</header>
             <Accordion className='InfoAccordion'>
                 <Card className='AccordionCard'>
-                    <Accordion.Toggle as={Card.Body} eventKey="0" />
+                    <Accordion.Toggle as={Card.Body} eventKey="0" >
+                        <img className="Caret" src={caretDown} height="30" />
+                    </Accordion.Toggle>
+                    
                     <Accordion.Collapse eventKey="0">
-                        <Card.Body>
-                            <Form>
-                                <Row>
-                                    <Col>
-                                        <Form.Group controlId={firstNameFormData.controlId}>
-                                            <Form.Label>{firstNameFormData.label}</Form.Label>
-                                            <Form.Control
-                                                type={firstNameFormData.type}
-                                                value={firstName}
-                                                onChange={e => setFirstName(e.target.value)}
-                                                disabled={!editing} />
-                                        </Form.Group>
-                                    </Col>
+                        <Form>
+                            <Row>
+                                <Col>
+                                    <Form.Group controlId={firstNameFormData.controlId}>
+                                        <Form.Label>{firstNameFormData.label}</Form.Label>
+                                        <Form.Control
+                                            type={firstNameFormData.type}
+                                            value={firstName}
+                                            onChange={e => setFirstName(e.target.value)}
+                                            disabled={!editing} />
+                                    </Form.Group>
+                                </Col>
 
-                                    <Col>
-                                        <Form.Group controlId={lastNameFormData.controlId}>
-                                            <Form.Label>{lastNameFormData.label}</Form.Label>
-                                            <Form.Control
-                                                type={lastNameFormData.type}
-                                                value={lastName}
-                                                onChange={e => setLastName(e.target.value)}
-                                                disabled={!editing} />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
+                                <Col>
+                                    <Form.Group controlId={lastNameFormData.controlId}>
+                                        <Form.Label>{lastNameFormData.label}</Form.Label>
+                                        <Form.Control
+                                            type={lastNameFormData.type}
+                                            value={lastName}
+                                            onChange={e => setLastName(e.target.value)}
+                                            disabled={!editing} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                                <Row>
-                                    <Col>
-                                        <Form.Group controlId={emailFormData.controlId}>
-                                            <Form.Label>{emailFormData.label}</Form.Label>
-                                            <Form.Control
-                                                type={emailFormData.type}
-                                                value={email}
-                                                onChange={e => setEmail(e.target.value)}
-                                                disabled={!editing} />
-                                        </Form.Group>
-                                    </Col>
+                            <Row>
+                                <Col>
+                                    <Form.Group controlId={emailFormData.controlId}>
+                                        <Form.Label>{emailFormData.label}</Form.Label>
+                                        <Form.Control
+                                            type={emailFormData.type}
+                                            value={email}
+                                            onChange={e => setEmail(e.target.value)}
+                                            disabled={!editing} />
+                                    </Form.Group>
+                                </Col>
 
-                                    <Col>
-                                        <Form.Group controlId={phoneFormData.controlId}>
-                                            <Form.Label>{phoneFormData.label}</Form.Label>
-                                            <Form.Control
-                                                type={phoneFormData.type}
-                                                value={phoneNumber}
-                                                onChange={e => setFirstName(e.target.value)}
-                                                disabled={!editing} />
-                                        </Form.Group>
-                                    </Col>
+                                <Col>
+                                    <Form.Group controlId={phoneFormData.controlId}>
+                                        <Form.Label>{phoneFormData.label}</Form.Label>
+                                        <Form.Control
+                                            type={phoneFormData.type}
+                                            value={phoneNumber}
+                                            onChange={e => setFirstName(e.target.value)}
+                                            disabled={!editing} />
+                                    </Form.Group>
+                                </Col>
 
-                                    <Col>
-                                        <Form.Group controlId={birthFormData.controlId}>
-                                            <Form.Label>{birthFormData.label}</Form.Label>
-                                            <Form.Control
-                                                type={birthFormData.type}
-                                                value={lastName}
-                                                onChange={e => setFirstName(e.target.value)}
-                                                disabled={!editing} />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                            </Form>
-                        </Card.Body>
+                                <Col>
+                                    <Form.Group controlId={birthFormData.controlId}>
+                                        <Form.Label>{birthFormData.label}</Form.Label>
+                                        <Form.Control
+                                            type={birthFormData.type}
+                                            value={lastName}
+                                            onChange={e => setFirstName(e.target.value)}
+                                            disabled={!editing} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+                        </Form>
                     </Accordion.Collapse>
                 </Card>
             </Accordion>
@@ -161,7 +171,9 @@ const UserProfile = () => {
             <header className="AccordionHeader">Other Information</header>
             <Accordion className='InfoAccordion'>
                 <Card className='AccordionCard'>
-                    <Accordion.Toggle as={Card.Body} eventKey="0" />
+                    <Accordion.Toggle as={Card.Body} eventKey="0" >
+                        <img className="Caret" src={caretDown} height="30" />
+                    </Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
                         <Card.Body>
                             Other information goes here.

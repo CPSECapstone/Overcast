@@ -14,6 +14,7 @@
     background-color: #E5E5E5;
     color: #000000;
     border-color: #EDEDED;
+    outline: none;
 }
 
 .InfoAccordion {
@@ -47,4 +48,22 @@
 .ManageDataText {
     font-size: 22px;
     color: #254E70;
+}
+
+.Caret {
+    float: right;
+}
+
+.card-body {
+    padding: .5em;
+}
+
+.collapse {
+    padding: 1em;
+    padding-top: 0;
+}
+
+.collapsing {
+    padding: 1em;
+    padding-top: 0;
 }
